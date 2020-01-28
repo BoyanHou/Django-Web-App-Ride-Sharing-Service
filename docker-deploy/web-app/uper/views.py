@@ -1,20 +1,12 @@
 from django.shortcuts import render
 from .models import User
-
-# Create your views here.
-from django.http import HttpResponse
-from .models import User
-
-def index(request):
-    return render(request, 'uper/index.html')
-
-def register_page(request):    
-    return render(request, 'uper/register.html')
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
 
 def register_process(request):
     user = User(username=request.POST['username'], password=request.POST['password'])
     user.save()
-    return render(request, 'uper/index.html')
+    return HttpResponseRedirect(reverse('uper:index')) # use reverse() to avoid hard-code url
 
 def login(request):
     if request.method == 'POST':
