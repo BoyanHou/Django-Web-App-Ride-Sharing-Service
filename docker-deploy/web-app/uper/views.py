@@ -18,8 +18,8 @@ def register_process(request):
 
 def login(request):
     if request.method == 'POST':
-        username_ = request.POST.get('username_')
-        password_ = request.POST.get('password_')
+        username_ = request.POST['username']
+        password_ = request.POST['password']
         exist = User.objects.filter(username = username_, password = password_)
         if exist:
             return HttpResponse('login successfully!')           
