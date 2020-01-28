@@ -17,4 +17,13 @@ def register_process(request):
     return render(request, 'uper/index.html')
 
 def login(request):
-    return HttpResponse("Login Logic TBD")
+    if request.method == 'POST':
+        username_ = request.POST.get('username_')
+        password_ = request.POST.get('password_')
+        exist = User.objects.filter(username = username_, password = password_)
+        if exist:
+            return HttpResponse('login successfully!')           
+        else:
+            return HttpResponse('Wrong username or password!')
+        
+
