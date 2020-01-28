@@ -12,4 +12,12 @@ def register(request):
     return HttpResponse("Register Page");
 
 def login(request):
-    return HttpResponse("Login Logic TBD");
+    if request.method == 'POST':
+        username_ = request.POST.get('username_')
+        password_ = request.POST.get('password_')
+        exist = User.objects.filter(username = username_, password = password_)
+        if exist:
+            return HttpResponse('login successfully!')           
+        else:
+            return HttpResponse('Wrong username or password!')
+        
