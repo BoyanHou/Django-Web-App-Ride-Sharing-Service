@@ -27,4 +27,5 @@
 7. can_share
 8. current_person_total
 9. other_info
+10. requested_vehicle_type
 
