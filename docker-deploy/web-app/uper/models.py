@@ -35,12 +35,15 @@ class Ride(models.Model):
     # this ride can be shared: cannot be null, can only be set/edited by owner
     # yes or no
     can_share = models.CharField(max_length = 10)
-    # current person total number: 10 slots, first slot for owner, 1-1 relationship sharer
+    # person number list: 10 slots, first slot for owner, 1-1 relationship sharer
     person_number_list = ArrayField(
         models.IntegerField(default=0),
         size = 10,
         null = True, # default is null
     )
+    # total person number: the sum of person number list
+    # default 0; cannot be 0 -- if 0, then close this ride
+    total_person_number = models.IntegerField(default=0)
     # other info: a string, can only be set/edited by owner
     # matching: strictly
     # !! optional

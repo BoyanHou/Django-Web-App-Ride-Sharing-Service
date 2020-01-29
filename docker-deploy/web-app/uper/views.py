@@ -31,13 +31,15 @@ def main_page(request):
     user_id = request.session["user_id"]
     username = User.objects.get(pk = user_id).username
 
-    # get a list of active rides the user is in
-    #!!!!!! TBD: add another filter condition: or sharer_id_list contains the user_id
-    ride_list = Ride.objects.filter(owner_id = user_id)
-
+    # build the ride list as owner, driver, and sharer
+    ride_list_as_owner =  Ride.objects.filter(owner_id = user_id)
+#    ride_list_as_sharer = Ride.objects.filter(sharer_id_list__contains() = [user_id])
+    ride_list_as_driver = Ride.objects.filter(driver_id = user_id)
+    
+    
     # build context dictionary to inject into html page
     context = {'username':username,
-               'ride_list':ride_list,
+               'ride_list_as_owner':ride_list_as_owner,
     }
     return render(request, 'uper/main_page.html', context)
 
@@ -74,6 +76,8 @@ def request_ride_process(request):
                           0,0,0,
                           0,0,0,
     ]
+    # set total person number = owner party person number
+    total_person_number = owner_party_person_number
     # form: other info (optional)
     other_info = request.POST["other_info"]
     # form: required vehicle type (optional)
@@ -88,6 +92,7 @@ def request_ride_process(request):
                 destination = destination,
                 can_share = can_share,
                 person_number_list = person_number_list,
+                total_person_number = total_person_number,
                 other_info = other_info,
                 required_vehicle_type = required_vehicle_type,
     )
