@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>Request a Uper Ride</title> 
+</head>
+
+<body>
+  
+  <p> Request a Uper Ride  </p>
+  <form action="{% url 'uper:request_ride_process'  %}" method="post">
+    {% csrf_token %}
+    arrival date and time: <input type="datetime-local" name="arrival_datetime"><br>
+    destination: <input type="text" name="destination"><br>
+    Do you want to share this ride?
+    <select name="can_share">
+      <option value="yes"> yes </option>
+      <option value="no"> no </option>
+    </select><br>
+    How many person do you have?
+    <select name="owner_party_person_number">
+      <option value="1"> 1 </option>
+      <option value="2"> 2 </option>
+      <option value="3"> 3 </option>
+      <option value="4"> 4 </option>
+      <option value="5"> 5 </option>
+      <option value="6"> 6 </option>
+      <option value="7"> 7 </option>
+      <option value="8"> 8 </option>
+      <option value="9"> 9 </option>
+      <option value="10"> 10 </option>
+    </select><br>
+    (optional)Other Infomation:
+    <input type="text" name="other_info" value=""><br>
+    (optional)Specify a Vehicle type:
+    <input type="text" name="required_vehicle_type" value=""><br>
+
+    <input type="submit" value="request a ride!">
+  </form>
+  
+</body>
+</html>
