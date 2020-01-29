@@ -1,1 +1,21 @@
 {{ username }}, Welcome to Uper!
+
+<a href="{% url 'uper:request_ride' %}">request a ride</a>
+<br />
+
+All Active Rides: <br />
+{% if ride_list %}
+    <ul>
+    {% for ride in ride_list %}
+    <li>state: {{ ride.state }}</li>
+    <li>arrival date and time: {{ ride.arrival_datetime }}</li>
+    <li>destination: {{ ride.destination }}</li>
+    <li>ride can be shared? {{ ride.can_share }}</li>
+    <li>other information: {{ ride.other_info }}</li>
+    <li>required vehicle type: {{ ride.required_vehicle_type }}</li>
+    <br> <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No active rides are available.</p>
+{% endif %}
