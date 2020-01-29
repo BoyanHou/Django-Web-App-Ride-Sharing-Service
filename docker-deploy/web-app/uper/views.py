@@ -29,8 +29,15 @@ def main_page(request):
     # get current user id from session
     user_id = request.session["user_id"]
     username = User.objects.get(pk = user_id).username
+
+    # get a list of active rides the user is in
+    #!!!!!! TBD: add another filter condition: or sharer_id_list contains the user_id
+    ride_list = Ride.objects.filter(owner_id = user_id)
+
     # build context dictionary to inject into html page
-    context = {'username':username,}
+    context = {'username':username,
+               'ride_list':ride_list,
+    }
     return render(request, 'uper/main_page.html', context)
 
 def request_ride_process(request):
