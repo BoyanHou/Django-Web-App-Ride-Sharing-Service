@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>Share ride search</title> 
+</head>
+
+<body>
+  <form action="{% url 'uper:shareride_search_result'  %}" method="post">
+    {% csrf_token %}
+    passenger_number: <input type="text" name="passenger_number"><br/>
+    destination: <input type="text" name="destination"><br/>
+    arrival_earliest: <input type="datetime-local" name="arrival">

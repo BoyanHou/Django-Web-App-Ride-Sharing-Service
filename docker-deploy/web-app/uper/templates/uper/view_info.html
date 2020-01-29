@@ -1,7 +1,11 @@
-The user_id is {{   user_id   }} <br />
-The username is {{   username   }} <br />
-The drivername is {{   drivername   }} <br />
-The vehicle_type is {{   vehicle_type   }} <br />
-The license_number is {{   license_number   }} <br />
-The capacity is {{   capacity   }} <br />
-Other_info of driver is {{   other_info  }} <br />
+<ul type="circle">
+  <li>User_id: {{   user_id   }} </li>
+  <li>Username: {{   username   }} </li>
+{% if Driver_ %}
+<ul type="square">
+  <li>drivername: {{   Driver_.drivername   }} </li>
+  <li>Vehicle_type: {{   Driver_.vehicle_type   }} </li>
+  <li>License_number: {{   Driver_.license_number   }} </li>
+  <li>Capacity: {{   Driver_.capacity   }} </li>
+  <li>Other_info: {{   Driver_.other_info  }} </li>
+{% endif %}

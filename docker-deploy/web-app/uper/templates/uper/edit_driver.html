@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>Edit driver info</title> 
+</head>
+
+<body>
+
+  <p> edit the driver information </p>
+  <form action="{% url 'uper:edit_driver_process'  %}" method="post">
+    {% csrf_token %}
+    new drivername: <input type="text" name="drivername"><br>
+    new vehicle_type: <input type="text" name="vehicle_type"><br>
+    new license_number: <input type="text" name="license_number"><br>
+    new capacity: <input type="text" name="capacity"><br>
+    new other_info: <input type="text" name="other_info"><br>
+    <input type="submit" value="submit change">
+  </form>
+</body>
+</html>

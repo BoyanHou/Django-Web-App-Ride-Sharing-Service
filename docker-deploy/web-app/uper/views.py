@@ -4,7 +4,7 @@ from .models import Ride
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Driver #import the class here
-
+from datetime import * #to compare date
 def register_process(request):
     user = User(username=request.POST['username'], password=request.POST['password'])
     user.save()
@@ -105,13 +105,20 @@ def request_ride_process(request):
 def view_info(request):
     user_id = request.session["user_id"]
     username = User.objects.get(pk = user_id).username
+    """
     drivername = Driver.objects.get(user_id = user_id).drivername
     vehicle_type = Driver.objects.get(user_id = user_id).vehicle_type
     license_number = Driver.objects.get(user_id = user_id).license_number
     capacity = Driver.objects.get(user_id = user_id).capacity
     other_info = Driver.objects.get(user_id = user_id).other_info
-    if(Driver.objects.filter(user_id = user_id)):
-        context = {'user_id':user_id, 'username':username, 'drivername':drivername, 'vehicle_type':vehicle_type, 'license_number':license_number, 'capacity':capacity, 'other_info':other_info,}
+    """
+    Driver_ = Driver.objects.filter(user_id = user_id)
+    if(Driver_):
+        #result of filter is a set, get the first set
+        context = {'user_id':user_id,'username':username,'Driver_':Driver_[0],}
+    else:
+        #if the Driver_ is not found, add empty as the value in driver
+        context = {'user_id':user_id,'username':username,'Driver_':Driver_,}
     return render(request, 'uper/view_info.html', context)
 
 def logout(request):
@@ -129,11 +136,56 @@ def driver_reg(request):
     other_info = request.POST['other_info']
     user_id = request.session['user_id']
     #return error page if the the input except other_info is empty
-    if not drivername or not vehicle_type or not license_number or not capacity:
-        return HttpResponse("Your input is not valid!")
-    else:
-        driver = Driver(drivername=drivername, vehicle_type=vehicle_type, license_number=license_number, capacity=capacity,other_info=other_info,user_id=user_id)
-        driver.save()
-        return HttpResponseRedirect(reverse('uper:main_page'))
+    if not drivername: 
+        return HttpResponse("Please tell us your name!")
+    if not vehicle_type:
+        return HttpResponse("Please tell us your vehicle type!")
+    if not license_number:
+        return HttpResponse("Please tell us your license number!")
+    if not capacity:
+        return HttpResponse("Please tell us the capacity of your vehicle!")
+    driver = Driver(drivername=drivername, vehicle_type=vehicle_type, license_number=license_number, capacity=capacity,other_info=other_info,user_id=user_id)
+    driver.save()
+    return HttpResponseRedirect(reverse('uper:main_page'))
         
 
+def edit_driver(request):
+    #edit the personal/vehicle info and driver status
+    user_id = request.session["user_id"]
+    Driver_list = Driver.objects.filter(user_id = user_id)
+    drivername = request.POST['drivername']
+    vehicle_type = request.POST['vehicle_type']
+    license_number = request.POST['license_number']
+    capacity = request.POST['capacity']
+    other_info = request.POST['other_info']
+    if not Driver_list:
+        return HttpResponse("Driver doesn't exist!")
+    Driver_ = Driver_list[0]
+    if(drivername):
+        Driver_.drivername = drivername
+    if(vehicle_type):
+        Driver_.vehicle_type = vehicle_type
+    if(license_number):
+        Driver_.license_number = license_number
+    if(capacity):
+        Driver_.capacity = capacity
+    if(other_info):
+        Driver_.other_info = other_info
+    Driver_.save()
+    return HttpResponseRedirect(reverse('uper:main_page'))
+
+def shareride_search_result(request):
+    user_id = request.session["user_id"]
+    passenger_number = int(request.POST['passenger_number'])
+    destination = request.POST['destination']
+    arrival_earliest = request.POST['arrival_earliest']
+    arrival_latest = request.POST['arrival_latest']
+#    print(arrival_ealiest)
+    #the number of passenger should be valid number
+    if(passenger_number <= 0):
+        return HttpResponse("Your passenger_number is invalid",)
+    ride_list_found = Ride.objects.filter(destination = destination , arrival_datetime__lte = arrival_latest,can_share = "yes",).filter(arrival_datetime__gte = arrival_earliest,)
+    if(ride_list_found):
+        return HttpResponse("share ride")
+    return HttpResponse("No ride is found")
+    

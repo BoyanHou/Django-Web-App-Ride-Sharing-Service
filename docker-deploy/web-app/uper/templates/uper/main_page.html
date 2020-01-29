@@ -12,15 +12,14 @@
     {% csrf_token %}
     <input type="submit" value="logout" />
   </form>
-  <a href="{% url 'uper:driver_register' %}">driver_register</a> <br />
-  <a href="{% url 'uper:view_info' %}">view_info</a>
-  <p>please register</p>
-  
-<a href="{% url 'uper:request_ride' %}">request a ride</a>
-<br />
+  <a href="{% url 'uper:driver_register' %}">driver_register</a> <br/>
+  <a href="{% url 'uper:view_info' %}">view_info</a> <br/>
+  <a href="{% url 'uper:edit_driver' %}">edit_driver</a> <br/>
+  <a href="{% url 'uper:request_ride' %}">request a ride</a><br/>
+  <a href="{% url 'uper:share_ride_search' %}">search share ride</a><br/>
 
 All Active Rides: <br />
-{% if ride_list %}
+{% if ride_list_as_owner %}
     <ul>
     {% for ride in ride_list_as_owner %}
     <li>state: {{ ride.state }}</li>
