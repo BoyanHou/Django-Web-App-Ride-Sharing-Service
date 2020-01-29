@@ -9,6 +9,7 @@ class User(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
 
+
 class Ride(models.Model):
     # the state of the ride can be: open/confirmed/closed/complete
     state = models.CharField(max_length=10)
@@ -48,3 +49,14 @@ class Ride(models.Model):
     # matching: strictly
     # !! optional
     required_vehicle_type = models.CharField(max_length=200)
+
+    
+class Driver(models.Model):
+    drivername = models.CharField(max_length=20)
+    vehicle_type = models.CharField(max_length=20)
+    license_number = models.IntegerField(default=0)
+    capacity = models.IntegerField(default=0)
+    other_info = models.CharField(max_length=80)
+    #use user id to connect driver account with user account
+    user_id = models.IntegerField(default=0)
+

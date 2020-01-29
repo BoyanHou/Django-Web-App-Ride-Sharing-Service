@@ -1,0 +1,20 @@
+{{ username }}, Welcome to join Uper as a driver!
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>Uper User Register</title> 
+</head>
+
+<body>
+  <form action="{% url 'uper:driver_register'  %}" method="post">
+    {% csrf_token %}
+    drivername: <input type="text" name="drivername" value=""><br>
+    vehicle_type:  <input type="text" name="vehicle_type" value=""><br>
+    license_number: <input type="text" name="license_number" value=""><br>
+    capacity: <input type="text" name="license_number" value=""><br>
+  </form>
+  <p>please register</p>
+
+</body>
+</html>

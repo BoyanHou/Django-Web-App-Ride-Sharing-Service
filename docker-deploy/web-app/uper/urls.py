@@ -9,7 +9,14 @@ urlpatterns = [
     path('register_process/', views.register_process, name='register_process'),
     path('login/', views.login, name='login'),
     path('main_page/', views.main_page, name='main_page'),
+
     path('request_ride/', TemplateView.as_view(template_name="uper/request_ride.html"), name='request_ride'),
     path('request_ride_process/', views.request_ride_process, name="request_ride_process"),
+
+    path('logout/',views.logout,name='logout'),
+    path('driver_register/', TemplateView.as_view(template_name="uper/driver_register.html"),name='driver_register'),
+    path('driver_register_process/', views.driver_reg, name ='driver_register_process'),
+    path('view_info/',views.view_info, name='view_info'),
+
 ]
 

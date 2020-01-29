@@ -3,6 +3,7 @@ from .models import User
 from .models import Ride
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
+from .models import Driver #import the class here
 
 def register_process(request):
     user = User(username=request.POST['username'], password=request.POST['password'])
@@ -39,6 +40,7 @@ def main_page(request):
                'ride_list':ride_list,
     }
     return render(request, 'uper/main_page.html', context)
+
 
 def request_ride_process(request):
     # collect ride info:
@@ -94,3 +96,39 @@ def request_ride_process(request):
     ride.save()
     # redirect back into main page
     return HttpResponseRedirect(reverse('uper:main_page'));
+
+def view_info(request):
+    user_id = request.session["user_id"]
+    username = User.objects.get(pk = user_id).username
+    drivername = Driver.objects.get(user_id = user_id).drivername
+    vehicle_type = Driver.objects.get(user_id = user_id).vehicle_type
+    license_number = Driver.objects.get(user_id = user_id).license_number
+    capacity = Driver.objects.get(user_id = user_id).capacity
+    other_info = Driver.objects.get(user_id = user_id).other_info
+    if(Driver.objects.filter(user_id = user_id)):
+        context = {'user_id':user_id, 'username':username, 'drivername':drivername, 'vehicle_type':vehicle_type, 'license_number':license_number, 'capacity':capacity, 'other_info':other_info,}
+    return render(request, 'uper/view_info.html', context)
+
+def logout(request):
+    #delete session id and logout
+     if request.method == 'POST':
+         del request.session['user_id']
+         return HttpResponseRedirect(reverse('uper:index'))            
+
+def driver_reg(request):
+    #register information for driver
+    drivername = request.POST['drivername']
+    vehicle_type = request.POST['vehicle_type']
+    license_number = request.POST['license_number']
+    capacity = request.POST['capacity']
+    other_info = request.POST['other_info']
+    user_id = request.session['user_id']
+    #return error page if the the input except other_info is empty
+    if not drivername or not vehicle_type or not license_number or not capacity:
+        return HttpResponse("Your input is not valid!")
+    else:
+        driver = Driver(drivername=drivername, vehicle_type=vehicle_type, license_number=license_number, capacity=capacity,other_info=other_info,user_id=user_id)
+        driver.save()
+        return HttpResponseRedirect(reverse('uper:main_page'))
+        
+

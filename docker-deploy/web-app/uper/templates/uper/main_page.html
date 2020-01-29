@@ -1,5 +1,21 @@
 {{ username }}, Welcome to Uper!
 
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>Uper User main_page</title> 
+</head>
+
+<body>
+  <form action="{% url 'uper:logout'  %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="logout" />
+  </form>
+  <a href="{% url 'uper:driver_register' %}">driver_register</a> <br />
+  <a href="{% url 'uper:view_info' %}">view_info</a>
+  <p>please register</p>
+  
 <a href="{% url 'uper:request_ride' %}">request a ride</a>
 <br />
 
@@ -19,3 +35,6 @@ All Active Rides: <br />
 {% else %}
     <p>No active rides are available.</p>
 {% endif %}
+</body>
+</html>
+
