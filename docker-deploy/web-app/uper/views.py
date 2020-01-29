@@ -4,7 +4,10 @@ from .models import Ride
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Driver #import the class here
+
 from datetime import * #to compare date
+
+
 def register_process(request):
     user = User(username=request.POST['username'], password=request.POST['password'])
     user.save()
@@ -33,13 +36,14 @@ def main_page(request):
 
     # build the ride list as owner, driver, and sharer
     ride_list_as_owner =  Ride.objects.filter(owner_id = user_id)
-#    ride_list_as_sharer = Ride.objects.filter(sharer_id_list__contains() = [user_id])
+    ride_list_as_sharer = Ride.objects.filter(sharer_id_list__contains = [user_id])
     ride_list_as_driver = Ride.objects.filter(driver_id = user_id)
-    
     
     # build context dictionary to inject into html page
     context = {'username':username,
                'ride_list_as_owner':ride_list_as_owner,
+               'ride_list_as_sharer':ride_list_as_sharer,
+               'ride_list_as_driver':ride_list_as_driver,
     }
     return render(request, 'uper/main_page.html', context)
 

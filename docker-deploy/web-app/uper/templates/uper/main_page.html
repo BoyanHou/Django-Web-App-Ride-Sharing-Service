@@ -18,23 +18,137 @@
   <a href="{% url 'uper:request_ride' %}">request a ride</a><br/>
   <a href="{% url 'uper:share_ride_search' %}">search share ride</a><br/>
 
-All Active Rides: <br />
+<!-- owner view & edit ride -->
+Owner: select an active ride to view & edit
+<select name="ride_as_owner_ride_id_selection" onchange="display_ride_as_owner_content(this.value)">
+  <option value="0"> choose a ride </option>
+  {% if ride_list_as_owner %}
+  {% for ride in ride_list_as_owner %}
+  <option value={{ride.id}}> {{ride.destination}} @ {{ride.arrival_datetime}} </option>
+  {% endfor %}
+  {% endif %}      
+</select><br>
+
 {% if ride_list_as_owner %}
-    <ul>
-    {% for ride in ride_list_as_owner %}
-    <li>state: {{ ride.state }}</li>
-    <li>arrival date and time: {{ ride.arrival_datetime }}</li>
+{% for ride in ride_list_as_owner %}
+  <ul class="ride_as_owner_content" id="ro_{{ride.id}}" style="display:none; ">
+    <li >state: {{ ride.state }}</li>
+    <li >arrival date and time: {{ ride.arrival_datetime }}</li>
     <li>destination: {{ ride.destination }}</li>
     <li>ride can be shared? {{ ride.can_share }}</li>
     <li>other information: {{ ride.other_info }}</li>
     <li>required vehicle type: {{ ride.required_vehicle_type }}</li>
     <li> total rider number: {{ride.total_person_number}} </li>
-    <br> <br>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No active rides are available.</p>
+    <br>
+  </ul>
+</div>
+{% endfor %}
 {% endif %}
+
+<br/>
+
+<!-- sharer view & edit ride -->
+Sharer: select an active ride to view & edit
+<select name="ride_as_sharer_ride_id_selection" onchange="display_ride_as_sharer_content(this.value)">
+  <option value="0"> choose a ride </option>
+  {% if ride_list_as_sharer %}
+  {% for ride in ride_list_as_sharer %}
+  <option value={{ride.id}}> {{ride.destination}} @ {{ride.arrival_datetime}} </option>
+  {% endfor %}
+  {% endif %}      
+</select><br>
+
+{% if ride_list_as_sharer %}
+{% for ride in ride_list_as_owner %}
+  <ul class="ride_as_sharer_content" id="rs_{{ride.id}}" style="display:none; ">
+    <li >state: {{ ride.state }}</li>
+    <li >arrival date and time: {{ ride.arrival_datetime }}</li>
+
+    <li>destination: {{ ride.destination }}</li>
+    <li>ride can be shared? {{ ride.can_share }}</li>
+    <li>other information: {{ ride.other_info }}</li>
+    <li>required vehicle type: {{ ride.required_vehicle_type }}</li>
+    <li> total rider number: {{ride.total_person_number}} </li>
+    <br>
+  </ul>
+</div>
+{% endfor %}
+{% endif %}
+
+<br />
+
+<!-- driver view and edit ride -->
+Driver: select an active drive to view & edit
+<select name="ride_as_driver_ride_id_selection" onchange="display_ride_as_driver_content(this.value)">
+  <option value="0"> choose a ride </option>
+  {% if ride_list_as_driver %}
+  {% for ride in ride_list_as_driver %}
+
+  <option value={{ride.id}}> {{ride.destination}} @ {{ride.arrival_datetime}} </option>
+
+  {% endfor %}
+  {% endif %}      
+</select><br>
+
+{% if ride_list_as_driver %}
+{% for ride in ride_list_as_driver %}
+  <ul class="ride_as_driver_content" id="rd_{{ride.id}}" style="display:none; ">
+    <li >state: {{ ride.state }}</li>
+    <li >arrival date and time: {{ ride.arrival_datetime }}</li>
+    <li>destination: {{ ride.destination }}</li>
+    <li>ride can be shared? {{ ride.can_share }}</li>
+    <li>other information: {{ ride.other_info }}</li>
+    <li>required vehicle type: {{ ride.required_vehicle_type }}</li>
+    <li> total rider number: {{ride.total_person_number}} </li>
+    <br>
+  </ul>
+</div>
+{% endfor %}
+{% endif %}
+
+
+<!-- Below is JS section for this html document -->
+<script type="text/javascript">
+  <!-- display owner rides information -->
+  function display_ride_as_owner_content(id_selection){
+    var content_list = document.getElementsByClassName("ride_as_owner_content");
+    for(var i=0; i<content_list.length; i++) { 
+      content = content_list[i];					 
+      if (content.id == ("ro_"+id_selection)) {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  }
+
+  <!-- display sharer rides information -->
+  function display_ride_as_sharer_content(id_selection){
+    var content_list = document.getElementsByClassName("ride_as_sharer_content");
+    for(var i=0; i<content_list.length; i++) { 
+      content = content_list[i];					 
+      if (target.id == ("rs_"+id_selection)) {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  }
+					
+  <!-- display driver rides information -->
+  function display_ride_as_driver_content(id_selection){
+    var content_list = document.getElementsByClassName("ride_as_driver_content");
+    for(var i=0; i<content_list.length; i++) { 
+      content = content_list[i];					 
+      if (target.id == ("rd_"+id_selection)) {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
 
