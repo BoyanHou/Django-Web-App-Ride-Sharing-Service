@@ -57,14 +57,14 @@
 
 <!-- Below is JS section for this html document -->
 <script type="text/javascript">
-  <!-- display owner rides information -->
-  {% for personal_ride_list in personal_ride_lists %}
+  <!-- display/hide owner/sharer/rider rides information -->
+  {% for personal_ride_list in personal_ride_lists.values %}
   {% with identity=personal_ride_list.identity%}
   function display_ride_as_{{identity}}_content(id_selection){
     var content_list = document.getElementsByClassName("ride_as_{{identity}}_content");
     for(var i=0; i<content_list.length; i++) { 
       content = content_list[i];					 
-      if (content.id == ("ride_as_{{identity}}"+id_selection)) {
+      if (content.id == ("ride_as_{{identity}}_"+id_selection)) {
         content.style.display = "block";
       } else {
         content.style.display = "none";
@@ -73,32 +73,7 @@
   }
   {% endwith %}
   {% endfor %}                            
-  
-  <!-- <\!-- display sharer rides information -\-> -->
-  <!-- function display_ride_as_sharer_content(id_selection){ -->
-  <!--   var content_list = document.getElementsByClassName("ride_as_sharer_content"); -->
-  <!--   for(var i=0; i < content_list.length; i++) {  -->
-  <!--     content = content_list[i];					  -->
-  <!--     if (target.id == ("rs_"+id_selection)) { -->
-  <!--       content.style.display = "block"; -->
-  <!--     } else { -->
-  <!--       content.style.display = "none"; -->
-  <!--     } -->
-  <!--   } -->
-  <!-- } -->
-					
-  <!-- <\!-- display driver rides information -\-> -->
-  <!-- function display_ride_as_driver_content(id_selection){ -->
-  <!--   var content_list = document.getElementsByClassName("ride_as_driver_content"); -->
-  <!--   for(var i=0; i<content_list.length; i++) {  -->
-  <!--     content = content_list[i];					  -->
-  <!--     if (target.id == ("rd_"+id_selection)) { -->
-  <!--       content.style.display = "block"; -->
-  <!--     } else { -->
-  <!--       content.style.display = "none"; -->
-  <!--     } -->
-  <!--   } -->
-  <!-- } -->
+ 
 </script>
 
 </body>
