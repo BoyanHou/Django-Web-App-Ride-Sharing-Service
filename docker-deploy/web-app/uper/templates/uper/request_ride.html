@@ -19,16 +19,9 @@
     </select><br>
     How many person do you have?
     <select name="owner_party_person_number">
-      <option value="1"> 1 </option>
-      <option value="2"> 2 </option>
-      <option value="3"> 3 </option>
-      <option value="4"> 4 </option>
-      <option value="5"> 5 </option>
-      <option value="6"> 6 </option>
-      <option value="7"> 7 </option>
-      <option value="8"> 8 </option>
-      <option value="9"> 9 </option>
-      <option value="10"> 10 </option>
+      {% for num in party_person_number_range %}
+      <option value="{{num}}"> {{num}} </option>
+      {% endfor %}
     </select><br>
     (optional)Other Infomation:
     <input type="text" name="other_info" value=""><br>
