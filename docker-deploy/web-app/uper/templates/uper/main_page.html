@@ -19,19 +19,20 @@
   <a href="{% url 'uper:share_ride_search' %}">search share ride</a><br/>
 
 <!-- owner & sharer & driver view & edit ride -->
-Owner: select an active ride to view & edit
-<select name="ride_as_owner_ride_id_selection" onchange="display_ride_as_owner_content(this.value)">
+{% for personal_ride_list in personal_ride_lists.values %}
+{{ personal_ride_list.identity }}: select an active ride to view & edit
+<select name="ride_as_{{ personal_ride_list.identity }}_ride_id_selection" onchange="display_ride_as_{{personal_ride_list.identity}}_content(this.value)">
   <option value="0"> choose a ride </option>
-  {% if personal_ride_list_as_owner %}
-  {% for personal_ride in personal_ride_list_as_owner %}
+  {% if personal_ride_list.list %}
+  {% for personal_ride in personal_ride_list.list %}
   <option value={{personal_ride.id}}> {{personal_ride.ride.destination}} @ {{personal_ride.ride.arrival_datetime}} </option>
   {% endfor %}
   {% endif %}      
 </select><br>
 
-{% if personal_ride_list_as_owner %}
-{% for personal_ride in personal_ride_list_as_owner %}
-  <ul class="ride_as_owner_content" id="ro_{{personal_ride.id}}" style="display:none; ">
+{% if personal_ride_list.list %}
+{% for personal_ride in personal_ride_list.list %}
+  <ul class="ride_as_{{ personal_ride_list.identity }}_content" id="ride_as_{{personal_ride_list.identity}}_{{personal_ride.id}}" style="display:none; ">
     <li >state: {{ personal_ride.ride.state }}</li>
     <li >arrival date and time: {{ personal_ride.ride.arrival_datetime }}</li>
     <li>destination: {{ personal_ride.ride.destination }}</li>
@@ -52,92 +53,52 @@ Owner: select an active ride to view & edit
 {% endfor %}
 {% endif %}
 <br/>
-
-
-
-
-<!-- sharer view & edit ride -->
-Sharer: select an active ride to view & edit
-<select name="ride_as_sharer_ride_id_selection" onchange="display_ride_as_sharer_content(this.value)">
-  <option value="0"> choose a ride </option>
-  {% if ride_list_as_sharer %}
-  {% for ride in ride_list_as_sharer %}
-  <option value={{ride.id}}> {{ride.destination}} @ {{ride.arrival_datetime}} </option>
-  {% endfor %}
-  {% endif %}      
-</select><br>
-
-{% if ride_list_as_sharer %}
-{% for ride in ride_list_as_owner %}
-  <ul class="ride_as_sharer_content" id="rs_{{ride.id}}" style="display:none; ">
-  </ul>
 {% endfor %}
-{% endif %}
-
-<br />
-
-<!-- driver view and edit ride -->
-Driver: select an active drive to view & edit
-<select name="ride_as_driver_ride_id_selection" onchange="display_ride_as_driver_content(this.value)">
-  <option value="0"> choose a ride </option>
-  {% if ride_list_as_driver %}
-  {% for ride in ride_list_as_driver %}
-
-  <option value={{ride.id}}> {{ride.destination}} @ {{ride.arrival_datetime}} </option>
-
-  {% endfor %}
-  {% endif %}      
-</select><br>
-
-{% if ride_list_as_driver %}
-{% for ride in ride_list_as_driver %}
-  <ul class="ride_as_driver_content" id="rd_{{ride.id}}" style="display:none; ">
-  </ul>
-</div>
-{% endfor %}
-{% endif %}
-
 
 <!-- Below is JS section for this html document -->
 <script type="text/javascript">
   <!-- display owner rides information -->
-  function display_ride_as_owner_content(id_selection){
-    var content_list = document.getElementsByClassName("ride_as_owner_content");
+  {% for personal_ride_list in personal_ride_lists %}
+  {% with identity=personal_ride_list.identity%}
+  function display_ride_as_{{identity}}_content(id_selection){
+    var content_list = document.getElementsByClassName("ride_as_{{identity}}_content");
     for(var i=0; i<content_list.length; i++) { 
       content = content_list[i];					 
-      if (content.id == ("ro_"+id_selection)) {
+      if (content.id == ("ride_as_{{identity}}"+id_selection)) {
         content.style.display = "block";
       } else {
         content.style.display = "none";
       }
     }
   }
-
-  <!-- display sharer rides information -->
-  function display_ride_as_sharer_content(id_selection){
-    var content_list = document.getElementsByClassName("ride_as_sharer_content");
-    for(var i=0; i < content_list.length; i++) { 
-      content = content_list[i];					 
-      if (target.id == ("rs_"+id_selection)) {
-        content.style.display = "block";
-      } else {
-        content.style.display = "none";
-      }
-    }
-  }
+  {% endwith %}
+  {% endfor %}                            
+  
+  <!-- <\!-- display sharer rides information -\-> -->
+  <!-- function display_ride_as_sharer_content(id_selection){ -->
+  <!--   var content_list = document.getElementsByClassName("ride_as_sharer_content"); -->
+  <!--   for(var i=0; i < content_list.length; i++) {  -->
+  <!--     content = content_list[i];					  -->
+  <!--     if (target.id == ("rs_"+id_selection)) { -->
+  <!--       content.style.display = "block"; -->
+  <!--     } else { -->
+  <!--       content.style.display = "none"; -->
+  <!--     } -->
+  <!--   } -->
+  <!-- } -->
 					
-  <!-- display driver rides information -->
-  function display_ride_as_driver_content(id_selection){
-    var content_list = document.getElementsByClassName("ride_as_driver_content");
-    for(var i=0; i<content_list.length; i++) { 
-      content = content_list[i];					 
-      if (target.id == ("rd_"+id_selection)) {
-        content.style.display = "block";
-      } else {
-        content.style.display = "none";
-      }
-    }
-  }
+  <!-- <\!-- display driver rides information -\-> -->
+  <!-- function display_ride_as_driver_content(id_selection){ -->
+  <!--   var content_list = document.getElementsByClassName("ride_as_driver_content"); -->
+  <!--   for(var i=0; i<content_list.length; i++) {  -->
+  <!--     content = content_list[i];					  -->
+  <!--     if (target.id == ("rd_"+id_selection)) { -->
+  <!--       content.style.display = "block"; -->
+  <!--     } else { -->
+  <!--       content.style.display = "none"; -->
+  <!--     } -->
+  <!--   } -->
+  <!-- } -->
 </script>
 
 </body>

@@ -38,14 +38,22 @@ def main_page(request):
     personal_ride_list_as_owner = user.personal_ride_set.filter(identity = "owner")
     personal_ride_list_as_sharer = user.personal_ride_set.filter(identity = "sharer")
     personal_ride_list_as_driver = user.personal_ride_set.filter(identity = "driver")
-
+    personal_ride_lists = {'personal_ride_list_as_owner':
+                           {'identity':"owner",
+                            'list':personal_ride_list_as_owner},
+                           'personal_ride_list_as_sharer':
+                           {'identity':"sharer",
+                            'list':personal_ride_list_as_sharer},
+                           'personal_ride_list_as_driver':
+                           {'identity':"driver",
+                            list:personal_ride_list_as_driver},
+    }
+    
     # build context dictionary to inject into html page
     context = {'username':username,
-               'personal_ride_list_as_owner':personal_ride_list_as_owner,
-               'personal_ride_list_as_sharer':personal_ride_list_as_sharer,
-               'personal_ride_list_as_driver':personal_ride_list_as_driver,
-               'identy_list':["owner, sharer, driver"],
+               'personal_ride_lists':personal_ride_lists,
     }
+    
     return render(request, 'uper/main_page.html', context)
 
 def request_ride(request):
