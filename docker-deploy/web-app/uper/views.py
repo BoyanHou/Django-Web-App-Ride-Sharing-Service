@@ -59,9 +59,17 @@ def main_page(request):
 def request_ride(request):
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
+    checklist = {"arrival_datetime":"arrival date and time",
+                 "destination":"destination",
+                 "can_share":"intention to share this ride or not",
+                 "party_person_number":"person number in your party",
+    }
+
     context = {'party_person_number_range':range(1, 10),
                'operation':"request",
+               'checklist':checklist,
     }
+    
     return render(request, 'uper/request_or_edit_ride.html', context)
 
 def edit_ride(request):
@@ -74,14 +82,23 @@ def edit_ride(request):
         can_share = "yes"
     else:
         can_share = "no"
-    
-    context = {'party_person_number_range':range(1, 10),
-               'personal_ride':personal_ride,
-               'ride':ride,
-               'operation':"edit",
-               'can_share':can_share,
-    }
-    return render(request, 'uper/request_or_edit_ride.html', context)
+    if personal_ride.identity == "driver":
+        ride.delete()
+        return HttpRequestRedirect(reverse('uper:main_page'))
+    else:
+        checklist = ["arrival_datetime",
+                 "destination",
+                 "can_share",
+                 "party_person_number",
+        ]
+        context = {'party_person_number_range':range(1, 10),
+                   'personal_ride':personal_ride,
+                   'ride':ride,
+                   'operation':"edit",
+                   'can_share':can_share,
+                   'check_list':checklist,
+        }
+        return render(request, 'uper/request_or_edit_ride.html', context)
 
 def request_or_edit_ride_process(request):
     if not login_status_is_valid(request):
@@ -153,7 +170,7 @@ def request_or_edit_ride_process(request):
         ride.save()
         
     # redirect back into main page
-    return HttpResponseRedirect(reverse('uper:main_page'));
+    return HttpResponseRedirect(reverse('uper:main_page'))
 
 def view_info(request):
     if not login_status_is_valid(request):

@@ -44,20 +44,41 @@
     <li> person number in your party: {{personal_ride.party_person_number}}
     <li> the last time you called/modified this ride: {{personal_ride.called_time}}
     
-    {% if personal_ride.ride.driver %}
+    {% if personal_ride.identity == "owner" or personal_ride.identity == "sharer" %}
+    {% if personal_ride.ride.driver  %}
     <br />
     <li>driver name: {{personal_ride.ride.driver.drivername}} </li>
     <li>vehicle type: {{personal_ride.driver.vehicle_type}} </li>      
     <li>license number: {{personal_ride.driver.license_number}} </li>
     <br />
     {% endif %}
+    {% else %}
+    <br />
+    {% for personal_ride_t in personal_ride.ride.personal_ride__set %}
+    {% if not personal_ride_t.identity == "driver" %}
+    <li> {{personal_ride_t.identity}} username: {{personal_ride_t.user.username}}</li>
+    <li> {{personal_ride_t.identity}} id: {{personal_ride_t.user.id}}</li>
+    <li> party person number : {{personal_ride_t.party_person_number}}</li>
+    <li> ride called time: {{personal_ride_t.called_time}} </li>
+    <li> email: {{personal_ride_t.user.email}} </li>
+    <br />
+    {% endif %}
+    {% endfor %}
+    <br />
+    {% endif %}
     
-    {% if personal_ride.ride.state == "open" and personal_ride.identity == "owner"%}
+    {% if personal_ride.ride.state == "open" and personal_ride.identity == "owner" or personal_ride.identity == "driver"%}
     <br/>
     <form action="{% url 'uper:edit_ride' %}" method="post">
     {% csrf_token %}
     <input type="text" style="display:none;" name="personal_ride_id" value={{personal_ride.id}} />  
-    <input type="submit" value="edit this ride" />
+    <input type="submit" value="
+      {% if personal_ride.identity == "driver" %} 
+      complete
+      {% else %}
+      edit
+      {% endif %}
+      this ride" />
     </form>
     {% endif %}
   </ul>

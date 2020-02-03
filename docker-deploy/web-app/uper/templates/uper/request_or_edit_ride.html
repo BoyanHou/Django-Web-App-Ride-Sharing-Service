@@ -8,7 +8,7 @@
 <body>
   
   <p> {{ operation }} a Uper Ride  </p>
-  <form action="{% url 'uper:request_or_edit_ride_process'  %}" method="post">
+  <form name="ride_form" onsubmit="return validateForm()"  action="{% url 'uper:request_or_edit_ride_process'  %}" method="post">
     {% csrf_token %}
     arrival date and time: <input type="datetime-local" name="arrival_datetime" value ="{{ ride.arrival_datetime|date:'Y-m-d'}}T{{ ride.arrival_datetime|date:'H:i'}}"><br>
     destination: <input type="text" name="destination" value="{{ ride.destination }}"><br>
@@ -40,5 +40,15 @@
 <script type="text/javascript">
   onload = function() {
     document.getElementById("party_person_number").selectedIndex = {{ personal_ride.party_person_number }} - 1 ;
+  }
+
+  function validateForm(){
+  {% for key,value in checklist.items %}
+    var {{ key }} = document.forms["ride_form"]["{{ key }}"].value;
+    if ({{ key }} == null || {{ key }} == ""){
+      alert("Please enter your {{ value }}!");
+      return false;
+    }
+  {% endfor %}
   }
 </script>
