@@ -179,8 +179,10 @@ def view_info(request):
     user_id = request.session["user_id"]
     user = User.objects.get(pk = user_id)
     username = user.username
-
-    Driver_ = user.driver
+    if(hasattr(user,'driver')):
+        Driver_ = user.driver
+    else:
+        Driver_ = None
     if(Driver_):
         #result of filter is a set, get the first set
         context = {'user_id':user_id,'username':username,'Driver_':Driver_,}
@@ -293,11 +295,40 @@ def shareride_search_result(request):
     #the number of passenger should be valid number
     if(passenger_number <= 0):
         return HttpResponse("Your passenger_number is invalid",)
-    ride_list_found = Ride.objects.filter(destination = destination , arrival_datetime__lte = arrival_latest,can_share = True,).filter(arrival_datetime__gte = arrival_earliest,)
+    #search for open rides that match our requirment
+    ride_list_found = Ride.objects.filter(destination = destination , arrival_datetime__lte = arrival_latest,can_share = True,).filter(arrival_datetime__gte = arrival_earliest,state= "open")
     if(ride_list_found):
-        return HttpResponse("share ride")
+        context = {'ride_list_found':ride_list_found,'sharer_number':passenger_number,}
+        return render(request,'uper/shareride_search_result.html',context)
     return HttpResponse("No ride is found")
 
+def join_shareride(request):
+    ride_id = request.POST["ride_id"]
+    sharer_num =  int(request.POST["sharer_num"])
+    ride = Ride.objects.get(pk=ride_id)
+    ride.total_rider_number += sharer_num
+    ride.save()
+    return HttpResponseRedirect(reverse('uper:main_page'))
+
+def driver_ride_search(request):
+    user_id = request.session["user_id"]
+    user = User.objects.get(pk = user_id)
+    capacity = user.driver.capacity
+    other_info = user.driver.other_info
+    vehicle_type = user.driver.vehicle_type
+    driver_ride_list_found = Ride.objects.filter(state="open",total_rider_number__lte=capacity, other_info = other_info, required_vehicle_type = vehicle_type)
+    if(driver_ride_list_found):
+        context = {'driver_ride_list_found':driver_ride_list_found,'driver_id':user_id}
+        return render(request,'uper/driver_ride_list_found.html',context)
+    return HttpResponse("No ride is found!")
+
+def take_order(request):
+    user_id = request.session["user_id"]
+    user = User.objects.get(pk = user_id)
+    ride = Ride.objects.get(pk = request.POST["ride_id"])
+    user.driver.ride_set.add(ride);
+    ride.state = "confirmed"
+    return HttpResponseRedirect(reverse('uper:main_page'))
 # Below are the common tool functions:
 def login_status_is_valid(request):        
     user_id = request.session['user_id']

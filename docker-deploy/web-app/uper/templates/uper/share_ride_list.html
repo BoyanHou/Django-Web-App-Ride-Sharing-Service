@@ -1,0 +1,15 @@
+The search result is:
+</br>
+<form action="{% url 'uper:join_shareride'  %}" method="post">
+  {% csrf_token %}
+{% for ride in ride_list_found %}
+  <li>arrival_datetime: {{ ride.arrival_datetime }} </li>
+  <li>destination: {{ ride.destination }} </li>
+  <li>total_person_number: {{  ride.total_person_number  }} </li>
+  <input type = "hidden" id ="1" name="owner_id" value={{  ride.user_id  }} >
+  <input type = "hidden" id = "2" name="passegner_number" value={{passenger_number}}>
+    <input type="submit" value="join"/>
+  </form>
+</br>
+
+{% endfor %}

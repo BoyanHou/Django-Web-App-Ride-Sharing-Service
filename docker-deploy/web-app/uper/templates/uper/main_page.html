@@ -14,9 +14,10 @@
   </form>
   <a href="{% url 'uper:driver_register' %}">driver_register</a> <br/>
   <a href="{% url 'uper:view_info' %}">view_info</a> <br/>
-  <a href="{% url 'uper:edit_driver' %}">edit_driver</a> <br/>
-  <a href="{% url 'uper:request_ride' %}">request a ride</a><br/>
-  <a href="{% url 'uper:share_ride_search' %}">search share ride</a><br/>
+  <a href="{% url 'uper:edit_driver' %}">edit_driver_info</a> <br/>
+  <a href="{% url 'uper:request_ride' %}">request_a_new_ride</a><br/>
+  <a href="{% url 'uper:share_ride_search' %}">sharer_search_ride</a><br/>
+  <a href="{% url 'uper:driver_ride_search' %}">driver_search_ride</a><br/>
 
 <!-- owner & sharer & driver view & edit ride -->
 {% for personal_ride_list in personal_ride_lists.values %}

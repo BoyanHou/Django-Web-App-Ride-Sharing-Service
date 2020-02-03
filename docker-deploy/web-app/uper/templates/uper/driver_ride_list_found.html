@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>driver_ride_search_result</title> 
+</head>
+
+Search result:
+<body>
+  <ul type="circle">
+    {% for ride in driver_ride_list_found %}
+      <form action="{% url 'uper:take_order' %}" method="post">
+	{% csrf_token %}
+	<li>destination: {{ ride.destination }} </li>
+	<li>arrival_time: {{ ride.arrival_datetime }}</li>
+	<input style = "display:none;" type = "number"  name ="driver_id" value={{ user_id }}>
+	<input style = "display:none;" type = "number" name ="ride_id" value={{ ride.id }} >
+	<input type="submit" value="take order"/>
+      </br>
+      </form>
+      {% endfor %}
+</body>

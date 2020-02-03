@@ -20,5 +20,8 @@ urlpatterns = [
     path("edit_driver_process/",views.edit_driver, name='edit_driver_process'),
     path("share_ride_search/",TemplateView.as_view(template_name="uper/share_ride_search.html"), name="share_ride_search"),
     path("shareride_search_result/", views.shareride_search_result, name="shareride_search_result"),
+    path("join_shareride/",views.join_shareride,name="join_shareride"),
+    path("driver_ride_search/",views.driver_ride_search, name="driver_ride_search"),
+    path("take_order/",views.take_order,name="take_order"),
 ]
 
