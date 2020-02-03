@@ -1,12 +1,6 @@
-User Info:
 <ul type="circle">
   <li>User_id: {{   user_id   }} </li>
   <li>Username: {{   username   }} </li>
-</ul>
-
-<br />
-
-Driver Info:
 {% if Driver_ %}
 <ul type="square">
   <li>drivername: {{   Driver_.drivername   }} </li>
@@ -14,8 +8,4 @@ Driver Info:
   <li>License_number: {{   Driver_.license_number   }} </li>
   <li>Capacity: {{   Driver_.capacity   }} </li>
   <li>Other_info: {{   Driver_.other_info  }} </li>
-</ul>
-{% else %}
-You are not a driver yet!<br />
-<a href="{% url 'uper:driver_register' %}">register as driver </a>
 {% endif %}

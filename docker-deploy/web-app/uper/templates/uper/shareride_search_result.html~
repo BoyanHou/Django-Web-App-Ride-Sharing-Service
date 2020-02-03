@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>share_ride_search_result</title> 
+</head>
+
+<body>
+  <form action="{% url 'uper:logout'  %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="logout" />
+  </form>
+  <a href="{% url 'uper:driver_register' %}">driver_register</a> <br/>
+  <a href="{% url 'uper:view_info' %}">view_info</a> <br/>
+  <a href="{% url 'uper:edit_driver' %}">edit_driver</a> <br/>
+  <a href="{% url 'uper:request_ride' %}">request a ride</a><br/>
+  <a href="{% url 'uper:share_ride_search' %}">search share ride</a><br/>
