@@ -59,11 +59,31 @@ def main_page(request):
 def request_ride(request):
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
+    context = {'party_person_number_range':range(1, 10),
+               'operation':"request",
+    }
+    return render(request, 'uper/request_or_edit_ride.html', context)
 
-    context = {'party_person_number_range':range(1, 10),}
-    return render(request, 'uper/request_ride.html', context)
+def edit_ride(request):
+    if not login_status_is_valid(request):
+        return HttpResponse("Please Login First!");
+    # sticky form: get the existing ride and personal ride objects from DB
+    personal_ride = Personal_ride.objects.get(pk = request.POST['personal_ride_id'])
+    ride = personal_ride.ride
+    if ride.can_share:
+        can_share = "yes"
+    else:
+        can_share = "no"
+    
+    context = {'party_person_number_range':range(1, 10),
+               'personal_ride':personal_ride,
+               'ride':ride,
+               'operation':"edit",
+               'can_share':can_share,
+    }
+    return render(request, 'uper/request_or_edit_ride.html', context)
 
-def request_ride_process(request):
+def request_or_edit_ride_process(request):
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
     
@@ -72,17 +92,24 @@ def request_ride_process(request):
     if not user_id: # the user is not logged in
         return HttpResponse("Please log in first!") # warning
     user = User.objects.get(pk = user_id)
- 
-    # Create a personal_ride
-    personal_ride = Personal_ride(
-        user = user,
-        called_time = datetime.datetime.now(),
-        identity = "owner",
-        party_person_number = request.POST["owner_party_person_number"],
-    )
+
+    if request.POST["operation"] == "request":
+    # Create a new personal_ride
+        personal_ride = Personal_ride(
+            user = user,
+            called_time = datetime.datetime.now(),
+            identity = "owner",
+            party_person_number = request.POST["party_person_number"],
+        )    
+    else:
+    # Edit an existing personal_ride 
+        personal_ride = Personal_ride.objects.get(pk = request.POST.get('personal_ride_id'))
+        # record previous person number in party, for new total person number calculation
+        previous_party_person_number = personal_ride.party_person_number
+        personal_ride.party_person_number = request.POST["party_person_number"]
+
     personal_ride.save()
 
-    # Create a ride containing this personal ride
     # Extract form data
     arrival_datetime = request.POST["arrival_datetime"]
     if not arrival_datetime: # this input field is a must
@@ -97,26 +124,34 @@ def request_ride_process(request):
         can_share = True
     else:
         can_share = False    
-    total_rider_number = request.POST["owner_party_person_number"],
     other_info = request.POST["other_info"]
     required_vehicle_type = request.POST["required_vehicle_type"]
 
-    ride = Ride(state = "open",
-                # no driver yet
-                arrival_datetime = arrival_datetime,
-                destination = destination,
-                can_share = can_share,
-                total_rider_number = request.POST["owner_party_person_number"],
-                other_info = other_info,
-                required_vehicle_type = required_vehicle_type,
-    )
-    ride.save()
-    
-    # add owner's personal ride into this ride
-    ride.personal_ride_set.add(personal_ride)
-    # save this requested ride into database
-    ride.save()
-    
+    if request.POST["operation"] == "request":
+    # Create a ride containing this personal ride
+        ride = Ride(state = "open",
+                    # no driver yet
+                    arrival_datetime = arrival_datetime,
+                    destination = destination,
+                    can_share = can_share,
+                    total_rider_number = request.POST["party_person_number"],
+                    other_info = other_info,
+                    required_vehicle_type = required_vehicle_type,
+        )
+        ride.save()
+        # add owner's personal ride into this ride
+        ride.personal_ride_set.add(personal_ride)
+    else:
+    # edit an existing ride
+        ride = personal_ride.ride
+        ride.arrival_datetime = arrival_datetime
+        ride.destination = destination
+        ride.can_share = can_share
+        ride.total_rider_number = ride.total_rider_number-previous_party_person_number+int(request.POST["party_person_number"])
+        ride.other_info = other_info
+        ride.required_vehicle_type = required_vehicle_type
+        ride.save()
+        
     # redirect back into main page
     return HttpResponseRedirect(reverse('uper:main_page'));
 
@@ -248,9 +283,15 @@ def shareride_search_result(request):
 
 # Below are the common tool functions:
 def login_status_is_valid(request):        
-        user_id = request.session['user_id']
-        exist = User.objects.get(pk = user_id)
-        if not exist:
-            return False
-        else:
-            return True
+    user_id = request.session['user_id']
+    exist = User.objects.get(pk = user_id)
+    if not exist:
+        return False
+    else:
+        return True    
+    
+    
+
+    
+        
+        

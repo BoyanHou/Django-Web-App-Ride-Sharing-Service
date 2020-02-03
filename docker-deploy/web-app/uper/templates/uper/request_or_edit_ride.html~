@@ -7,8 +7,8 @@
 
 <body>
   
-  <p> Request a Uper Ride  </p>
-  <form action="{% url 'uper:request_ride_process'  %}" method="post">
+  <p> {{ operation }} a Uper Ride  </p>
+  <form action="{% url 'uper:operate_ride_process'  %}" method="post">
     {% csrf_token %}
     arrival date and time: <input type="datetime-local" name="arrival_datetime"><br>
     destination: <input type="text" name="destination"><br>

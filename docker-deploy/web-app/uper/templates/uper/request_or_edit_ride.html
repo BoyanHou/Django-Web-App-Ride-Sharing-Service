@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"> 
+  <title>Request a Uper Ride</title> 
+</head>
+
+<body>
+  
+  <p> {{ operation }} a Uper Ride  </p>
+  <form action="{% url 'uper:request_or_edit_ride_process'  %}" method="post">
+    {% csrf_token %}
+    arrival date and time: <input type="datetime-local" name="arrival_datetime" value ="{{ ride.arrival_datetime|date:'Y-m-d'}}T{{ ride.arrival_datetime|date:'H:i'}}"><br>
+    destination: <input type="text" name="destination" value="{{ ride.destination }}"><br>
+    Do you want to share this ride?
+    <select name="can_share" value="{{ can_share }}">
+      <option value="yes"> yes </option>
+      <option value="no"> no </option>
+    </select><br>
+    How many person do you have?
+    <select type="number" name="party_person_number" id="party_person_number">
+      {% for num in party_person_number_range %}
+      <option type="number" value={{num}}> {{num}} </option>
+      {% endfor %}
+    </select><br>
+    (optional)Other Infomation:
+    <input type="text" name="other_info" value="{{ ride.other_info }}"><br>
+    (optional)Specify a Vehicle type:
+    <input type="text" name="required_vehicle_type" value="{{ ride.required_vehicle_type }}"><br \>
+    {% if operation == "edit" %}
+    <input type="number" name="personal_ride_id" value={{ personal_ride.id }} style="display:none;">
+    {% endif %}
+    <input type="text" name="operation" value="{{ operation }}" style="display:none;">
+    <input type="submit" value="submit {{ operation }}!">
+  </form>
+  
+</body>
+</html>
+
+<script type="text/javascript">
+  onload = function() {
+    document.getElementById("party_person_number").selectedIndex = {{ personal_ride.party_person_number }} - 1 ;
+  }
+</script>
