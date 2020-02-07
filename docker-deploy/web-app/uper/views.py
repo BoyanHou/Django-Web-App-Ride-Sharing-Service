@@ -28,13 +28,13 @@ def login(request):
             return HttpResponse('Wrong username or password!')
         
 def main_page(request):
-    send_mail(
-        'Uper Drive',
-        'Your Uper Request Has A Driver',
-        'abinihsow@gmail.com',
-        ['hbyeddy123@gmail.com'],
-        fail_silently=False,
-    )
+    # send_mail(
+    #     'Uper Drive',
+    #     'Your Uper Request Has A Driver',
+    #     'abinihsow@gmail.com',
+    #     ['hbyeddy123@gmail.com'],
+    #     fail_silently=False,
+    # )
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
     
@@ -87,6 +87,11 @@ def edit_ride(request):
     # sticky form: get the existing ride and personal ride objects from DB
     personal_ride = Personal_ride.objects.get(pk = request.POST['personal_ride_id'])
     ride = personal_ride.ride
+    # if is user: this is completing(deleting) this ride
+    if personal_ride.identity=="driver":
+        ride.delete()
+        return HttpResponseRedirect(reverse('uper:main_page'))
+    
     if ride.can_share:
         can_share = "yes"
     else:
