@@ -1,17 +1,35 @@
-1. the owner should not be able to select a datetime that is older than "now"
+01/28: 1. the owner should not be able to select a datetime that is older than "now"
+solution: added comparison between now and target time, if target time is earlier, will report error.
 
-2. the sharer should not be able to search for a ride whose starting range is older than "now"
+01/29: 2. the sharer/driver should not be able to search for a ride whose starting range is older than "now"
+solution: we compare the begining time with now to guarantee user can't choose time earlier than now.
 
-3. the driver should not be able to search for a ride whose starting range is older than "now"
+01/29: 3. What if a user logged in and than forget to log out, and he was logged in a public computer? How to wipe out the user data after the browser is closed?
+solution: we haven't solved this problem yet, but we think that we can set a session to expire when the browser exit.
 
-4. What if a user logged in and than forget to log out, and he was logged in a public computer? How to wipe out the user data after the browser is closed?
+02/02: 4. What if a ride's target arrival time has past "now"? How should we constantly update the database and clean it up?
+solution: this problem can be solved by going through the database every time user request a url, and deleted the outdated one.
 
-5. What if a ride's target arrival time has past "now"? How should we constantly update the database and clean it up?
+02/02: 5. What if a user delete his/her account? Would the set One-to-One field nad Many-to-One field be able to handle this and delete all related rides andrider relation?
+solution: we solved this problem by the inherited characterastic of many-to-one field and one-to-one field.
 
-6. What if a user delete his/her account? Would the set One-to-One field nad Many-to-One field be able to handle this and delete all related rides and rider relation?
+02/02: 6. a driver should not be able to take/search for his own request as owner/sharer
+solution: after we get all the requested ride, we iterate through it and deleted those whose owner/sharer is ourselves.
 
-7. a driver should not be able to take/search for his own request as owner/sharer
+02/02: 7. a sharer should not be able to join/search for his own request as owner/driver
+solution: the solution is bascially the same as 7, we just need to filter the request ride list again.
 
-8. a sharer should not be able to join/search for his own request as owner/driver
+02/06: 8. When registering for an account, a user should only use valid email address.
+solution: this problem can be solved by sending verification code to the email address user entered, if it's invalid, user won't be able to get the email.
 
-9. When registering for an account, a user should only use valid email address.
+02/06: 9. User name can not be the same.
+solution: when registering, we search through the database to find if we have the same username to make sure user name won't be the same.
+
+02/06: 10. Driver cannot reset his other_info back to empty
+solution: we changed some of the if condition, so that when editing driver info, empty field of vehicle type and other_info won't be ignored.
+
+02/06: 11. when registering/logging, the password should not be shown on the screen as plain text.
+solution: we changed the type in html to "password", and it solved the problem.
+
+02/06: 12. when registering, user should can not leave password/email/username blank
+solution: we add some if statements to prevent this from happening.
