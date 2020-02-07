@@ -13,7 +13,8 @@ def register_process(request):
     user_name_existed = User.objects.filter(username = request.POST['username'])
     if user_name_existed:
         return HttpResponse("Sorry, this username has already been taken!")
-    user = User(username=request.POST['username'], password=request.POST['password'])
+    user = User(username=request.POST['username'], password=request.POST['password'],email=request.POST['email'],)
+
     user.save()
     return HttpResponseRedirect(reverse('uper:index')) # use reverse() to avoid hard-code url
 
@@ -32,13 +33,6 @@ def login(request):
             return HttpResponse('Wrong username or password!')
         
 def main_page(request):
-    # send_mail(
-    #     'Uper Drive',
-    #     'Your Uper Request Has A Driver',
-    #     'abinihsow@gmail.com',
-    #     ['hbyeddy123@gmail.com'],
-    #     fail_silently=False,
-    # )
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
     
@@ -395,16 +389,14 @@ def take_order(request):
     ride.state = "confirmed"
     ride.driver = user.driver
     ride.personal_ride_set.add(personal_ride)
-    
-    # write the email function here!
-    # send_mail(
-    #     'Uper Drive',
-    #     'Your Uper Request Has A Driver',
-    #     'boyan.hou@outlook.com',
-    #     ['hbyeddy123@gmail.com'],
-    #     fail_silently=False,
-    # )
-
+    for pr in ride.personal_ride_set.all():
+     send_mail(
+        'Uper Drive:',
+         'Your Uper Request Has been accepted by a Driver:\n'+pr.ride.driver.drivername+'\ndestination:\n'+pr.ride.destination+'\narrival time:\n'+str(pr.ride.arrival_datetime)+'\n',
+        'Uperofficial@gmail.com',
+        [pr.user.email],
+        fail_silently=False,
+    )
     ride.save()
     return HttpResponseRedirect(reverse('uper:main_page'))
 

@@ -30,8 +30,8 @@ ALLOWED_HOSTS = ['*']
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'abinihsow@gmail.com'
-EMAIL_HOST_PASSWORD = 'GG4pr1vacy'
+EMAIL_HOST_USER = 'eden.miao232@gmail.com'
+EMAIL_HOST_PASSWORD = 'Mk868/9/21'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -85,25 +85,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
-}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'postgres',
 #         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': '127.0.0.1',
+#         'HOST': 'db',
 #         'PORT': 5432,
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': 5432,
+    }
+}
 
 
 # Password validation

@@ -13,3 +13,5 @@
 7. a driver should not be able to take/search for his own request as owner/sharer
 
 8. a sharer should not be able to join/search for his own request as owner/driver
+
+9. When registering for an account, a user should only use valid email address.
