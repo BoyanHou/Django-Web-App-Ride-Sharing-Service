@@ -1,0 +1,746 @@
+Starting dockerdeploy_db_1 ... 
+Starting dockerdeploy_db_1
+[1A[2KStarting dockerdeploy_db_1 ... [32mdone[0m[1BStarting dockerdeploy_web-init_1 ... 
+Starting dockerdeploy_web-init_1
+[1A[2KStarting dockerdeploy_web-init_1 ... [32mdone[0m[1BStarting dockerdeploy_web_1 ... 
+Starting dockerdeploy_web_1
+[1A[2KStarting dockerdeploy_web_1 ... [32mdone[0m[1BStarting dockerdeploy_nginx_1 ... 
+Starting dockerdeploy_nginx_1
+[1A[2KStarting dockerdeploy_nginx_1 ... [32mdone[0m[1BAttaching to dockerdeploy_db_1, dockerdeploy_web-init_1, dockerdeploy_web_1, dockerdeploy_nginx_1
+[33mweb-init_1  |[0m No changes detected
+[36mdb_1        |[0m 
+[36mdb_1        |[0m PostgreSQL Database directory appears to contain a database; Skipping initialization
+[36mdb_1        |[0m 
+[33mweb-init_1  |[0m Operations to perform:
+[36mdb_1        |[0m 2020-02-07 16:27:48.078 UTC [1] LOG:  starting PostgreSQL 12.1 (Debian 12.1-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+[33mweb-init_1  |[0m   Apply all migrations: admin, auth, contenttypes, sessions, uper
+[33mweb-init_1  |[0m Running migrations:
+[32mweb_1       |[0m Watching for file changes with StatReloader
+[32mweb_1       |[0m Performing system checks...
+[33mweb-init_1  |[0m   No migrations to apply.
+[32mweb_1       |[0m 
+[36mdb_1        |[0m 2020-02-07 16:27:48.079 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[32mweb_1       |[0m System check identified no issues (0 silenced).
+[36mdb_1        |[0m 2020-02-07 16:27:48.079 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[36mdb_1        |[0m 2020-02-07 16:27:48.082 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[36mdb_1        |[0m 2020-02-07 16:27:48.100 UTC [24] LOG:  database system was interrupted; last known up at 2020-02-07 16:22:25 UTC
+[32mweb_1       |[0m February 07, 2020 - 16:27:50
+[32mweb_1       |[0m Django version 2.2.9, using settings 'mysite.settings'
+[32mweb_1       |[0m Starting development server at http://0.0.0.0:8000/
+[32mweb_1       |[0m Quit the server with CONTROL-C.
+[36mdb_1        |[0m 2020-02-07 16:27:48.134 UTC [24] LOG:  database system was not properly shut down; automatic recovery in progress
+[33mdockerdeploy_web-init_1 exited with code 0
+[0m[36mdb_1        |[0m 2020-02-07 16:27:48.151 UTC [24] LOG:  redo starts at 0/172D3C0
+[36mdb_1        |[0m 2020-02-07 16:27:48.155 UTC [24] LOG:  invalid record length at 0/174BC30: wanted 24, got 0
+[36mdb_1        |[0m 2020-02-07 16:27:48.155 UTC [24] LOG:  redo done at 0/174BBF8
+[36mdb_1        |[0m 2020-02-07 16:27:48.216 UTC [1] LOG:  database system is ready to accept connections
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:28:31 +0000] "POST /uper/driver_register_process/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/driver_register/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:31] "POST /uper/driver_register_process/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:28:31 +0000] "GET /uper/main_page/ HTTP/1.1" 200 2875 "http://vcm-12360.vm.duke.edu:8000/uper/driver_register/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:31] "GET /uper/main_page/ HTTP/1.0" 200 2875
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:28:48 +0000] "POST /uper/driver_register_process/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/driver_register/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:48] "POST /uper/driver_register_process/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:28:49 +0000] "GET /uper/main_page/ HTTP/1.1" 200 2875 "http://vcm-12360.vm.duke.edu:8000/uper/driver_register/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:49] "GET /uper/main_page/ HTTP/1.0" 200 2875
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:28:50 +0000] "GET /uper/request_ride/ HTTP/1.1" 200 2799 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:50] "GET /uper/request_ride/ HTTP/1.0" 200 2799
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:28:55 +0000] "POST /uper/logout/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:55] "POST /uper/logout/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:28:55 +0000] "GET /uper/ HTTP/1.1" 200 547 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:28:55] "GET /uper/ HTTP/1.0" 200 547
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:00 +0000] "POST /uper/login/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:00] "POST /uper/login/ HTTP/1.0" 302 0
+[32mweb_1       |[0m [07/Feb/2020 16:29:00] "GET /uper/main_page/ HTTP/1.0" 200 2875
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:00 +0000] "GET /uper/main_page/ HTTP/1.1" 200 2875 "http://vcm-12360.vm.duke.edu:8000/uper/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:07 +0000] "GET /uper/share_ride_search/ HTTP/1.1" 200 663 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:07] "GET /uper/share_ride_search/ HTTP/1.0" 200 663
+[32mweb_1       |[0m /usr/local/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1424: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 16:29:14.168906) while time zone support is active.
+[32mweb_1       |[0m   warnings.warn("DateTimeField %s received a naive datetime (%s)"
+[32mweb_1       |[0m /usr/local/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1424: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (2020-02-07 07:00:00) while time zone support is active.
+[32mweb_1       |[0m   warnings.warn("DateTimeField %s received a naive datetime (%s)"
+[32mweb_1       |[0m [07/Feb/2020 16:29:14] "POST /uper/request_or_edit_ride_process/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:29:14 +0000] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:29:14 +0000] "GET /uper/main_page/ HTTP/1.1" 200 3806 "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:14] "GET /uper/main_page/ HTTP/1.0" 200 3806
+[32mweb_1       |[0m /usr/local/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1424: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (9999-09-09 09:09:00) while time zone support is active.
+[32mweb_1       |[0m   warnings.warn("DateTimeField %s received a naive datetime (%s)"
+[32mweb_1       |[0m /usr/local/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1424: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-01-01 11:11:00) while time zone support is active.
+[32mweb_1       |[0m   warnings.warn("DateTimeField %s received a naive datetime (%s)"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:32 +0000] "POST /uper/shareride_search_result/ HTTP/1.1" 200 760 "http://vcm-12360.vm.duke.edu:8000/uper/share_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:32] "POST /uper/shareride_search_result/ HTTP/1.0" 200 760
+[32mweb_1       |[0m /usr/local/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1424: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 16:29:43.855795) while time zone support is active.
+[32mweb_1       |[0m   warnings.warn("DateTimeField %s received a naive datetime (%s)"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:43 +0000] "POST /uper/join_shareride/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/shareride_search_result/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:43] "POST /uper/join_shareride/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:43 +0000] "GET /uper/main_page/ HTTP/1.1" 200 3471 "http://vcm-12360.vm.duke.edu:8000/uper/shareride_search_result/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:43] "GET /uper/main_page/ HTTP/1.0" 200 3471
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:56 +0000] "POST /uper/logout/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:56] "POST /uper/logout/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:29:56 +0000] "GET /uper/ HTTP/1.1" 200 547 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:29:56] "GET /uper/ HTTP/1.0" 200 547
+[32mweb_1       |[0m [07/Feb/2020 16:30:01] "POST /uper/login/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:30:01 +0000] "POST /uper/login/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:30:01] "GET /uper/main_page/ HTTP/1.0" 200 2875
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:30:01 +0000] "GET /uper/main_page/ HTTP/1.1" 200 2875 "http://vcm-12360.vm.duke.edu:8000/uper/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:30:03 +0000] "GET /uper/driver_ride_search/ HTTP/1.1" 200 645 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:30:03] "GET /uper/driver_ride_search/ HTTP/1.0" 200 645
+[32mweb_1       |[0m /usr/local/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1424: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 16:30:04.635897) while time zone support is active.
+[32mweb_1       |[0m   warnings.warn("DateTimeField %s received a naive datetime (%s)"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:30:09 +0000] "POST /uper/take_order/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:30:09] "POST /uper/take_order/ HTTP/1.0" 302 0
+[32mweb_1       |[0m [07/Feb/2020 16:30:09] "GET /uper/main_page/ HTTP/1.0" 200 4252
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:30:09 +0000] "GET /uper/main_page/ HTTP/1.1" 200 4252 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:31:07] "GET /uper/edit_driver/ HTTP/1.0" 200 725
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:31:07 +0000] "GET /uper/edit_driver/ HTTP/1.1" 200 725 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:31:13] "GET /uper/edit_driver/ HTTP/1.0" 200 725
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:31:13 +0000] "GET /uper/edit_driver/ HTTP/1.1" 200 725 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:32:57 +0000] "GET /uper/view_info/ HTTP/1.1" 200 279 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:32:57] "GET /uper/view_info/ HTTP/1.0" 200 279
+[32mweb_1       |[0m /code/uper/views.py changed, reloading.
+[32mweb_1       |[0m Watching for file changes with StatReloader
+[32mweb_1       |[0m Performing system checks...
+[32mweb_1       |[0m 
+[32mweb_1       |[0m System check identified no issues (0 silenced).
+[32mweb_1       |[0m February 07, 2020 - 16:34:05
+[32mweb_1       |[0m Django version 2.2.9, using settings 'mysite.settings'
+[32mweb_1       |[0m Starting development server at http://0.0.0.0:8000/
+[32mweb_1       |[0m Quit the server with CONTROL-C.
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:34:19 +0000] "GET /uper/request_ride/ HTTP/1.1" 200 2799 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:19] "GET /uper/request_ride/ HTTP/1.0" 200 2799
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:21 +0000] "GET /uper/view_info/ HTTP/1.1" 200 275 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:21] "GET /uper/view_info/ HTTP/1.0" 200 275
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:34:25 +0000] "GET /uper/view_info/ HTTP/1.1" 200 279 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:25] "GET /uper/view_info/ HTTP/1.0" 200 279
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:34:26 +0000] "GET /uper/edit_driver/ HTTP/1.1" 200 725 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:26] "GET /uper/edit_driver/ HTTP/1.0" 200 725
+[32mweb_1       |[0m [07/Feb/2020 16:34:27] "GET /uper/edit_driver/ HTTP/1.0" 200 725
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:27 +0000] "GET /uper/edit_driver/ HTTP/1.1" 200 725 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:30 +0000] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:30] "POST /uper/edit_driver_process/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:30 +0000] "GET /uper/main_page/ HTTP/1.1" 200 3609 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:30] "GET /uper/main_page/ HTTP/1.0" 200 3609
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:32 +0000] "GET /uper/view_info/ HTTP/1.1" 200 278 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:32] "GET /uper/view_info/ HTTP/1.0" 200 278
+[32mweb_1       |[0m [07/Feb/2020 16:34:36] "GET /uper/edit_driver/ HTTP/1.0" 200 725
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:36 +0000] "GET /uper/edit_driver/ HTTP/1.1" 200 725 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:34:36 +0000] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:36] "POST /uper/edit_driver_process/ HTTP/1.0" 302 0
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:34:36 +0000] "GET /uper/main_page/ HTTP/1.1" 200 4252 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:36] "GET /uper/main_page/ HTTP/1.0" 200 4252
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:38 +0000] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:38] "POST /uper/edit_driver_process/ HTTP/1.0" 302 0
+[32mweb_1       |[0m [07/Feb/2020 16:34:38] "GET /uper/main_page/ HTTP/1.0" 200 3604
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:38 +0000] "GET /uper/main_page/ HTTP/1.1" 200 3604 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:34:38 +0000] "GET /uper/view_info/ HTTP/1.1" 200 274 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:38] "GET /uper/view_info/ HTTP/1.0" 200 274
+[35mnginx_1     |[0m 10.197.60.38 - - [07/Feb/2020:16:34:40 +0000] "GET /uper/view_info/ HTTP/1.1" 200 275 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:34:40] "GET /uper/view_info/ HTTP/1.0" 200 275
+[32mweb_1       |[0m /code/uper/views.py changed, reloading.
+[32mweb_1       |[0m Watching for file changes with StatReloader
+[32mweb_1       |[0m Performing system checks...
+[32mweb_1       |[0m 
+[32mweb_1       |[0m System check identified no issues (0 silenced).
+[32mweb_1       |[0m February 07, 2020 - 16:43:35
+[32mweb_1       |[0m Django version 2.2.9, using settings 'mysite.settings'
+[32mweb_1       |[0m Starting development server at http://0.0.0.0:8000/
+[32mweb_1       |[0m Quit the server with CONTROL-C.
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:43:57 +0000] "GET /uper/request_ride/ HTTP/1.1" 200 2799 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m [07/Feb/2020 16:43:57] "GET /uper/request_ride/ HTTP/1.0" 200 2799
+[32mweb_1       |[0m Internal Server Error: /uper/request_or_edit_ride_process/
+[32mweb_1       |[0m Traceback (most recent call last):
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+[32mweb_1       |[0m     response = get_response(request)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+[32mweb_1       |[0m     response = self.process_exception_by_middleware(e, request)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+[32mweb_1       |[0m     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[32mweb_1       |[0m   File "/code/uper/views.py", line 126, in request_or_edit_ride_process
+[32mweb_1       |[0m     if(request.POST["arrival_datetime"] < datetime.datetime.now()):
+[32mweb_1       |[0m TypeError: '<' not supported between instances of 'str' and 'datetime.datetime'
+[32mweb_1       |[0m [07/Feb/2020 16:44:12] "POST /uper/request_or_edit_ride_process/ HTTP/1.0" 500 63345
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:44:12 +0000] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 500 63345 "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m /code/uper/views.py changed, reloading.
+[32mweb_1       |[0m Watching for file changes with StatReloader
+[32mweb_1       |[0m Performing system checks...
+[32mweb_1       |[0m 
+[32mweb_1       |[0m Exception in thread django-main-thread:
+[32mweb_1       |[0m Traceback (most recent call last):
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[32mweb_1       |[0m     self.run()
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[32mweb_1       |[0m     self._target(*self._args, **self._kwargs)
+[35mnginx_1     |[0m 2020/02/07 16:48:21 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "POST /uper/request_or_edit_ride_process/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/request_or_edit_ride_process/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:21 +0000] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:25 +0000] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/autoreload.py", line 54, in wrapper
+[35mnginx_1     |[0m 2020/02/07 16:48:25 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "POST /uper/request_or_edit_ride_process/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/request_or_edit_ride_process/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/request_ride/"
+[35mnginx_1     |[0m 2020/02/07 16:48:29 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/request_ride/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/request_ride/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[32mweb_1       |[0m     fn(*args, **kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+[32mweb_1       |[0m     self.check(display_num_errors=True)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[32mweb_1       |[0m     all_issues = self._run_checks(
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[32mweb_1       |[0m     return checks.run_checks(**kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[32mweb_1       |[0m     new_errors = check(app_configs=app_configs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+[32mweb_1       |[0m     return check_resolver(resolver)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+[32mweb_1       |[0m     return check_method()
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 399, in check
+[32mweb_1       |[0m     for pattern in self.url_patterns:
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[32mweb_1       |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[32mweb_1       |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[32mweb_1       |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[32mweb_1       |[0m     return import_module(self.urlconf_name)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[32mweb_1       |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[32mweb_1       |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[32mweb_1       |[0m     path('uper/', include('uper.urls')),
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[32mweb_1       |[0m     urlconf_module = import_module(urlconf_module)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[32mweb_1       |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[32mweb_1       |[0m   File "/code/uper/urls.py", line 3, in <module>
+[32mweb_1       |[0m     from . import views
+[32mweb_1       |[0m   File "/code/uper/views.py", line 1, in <module>
+[32mweb_1       |[0m     from dateutil import parser
+[32mweb_1       |[0m ModuleNotFoundError: No module named 'dateutil'
+[32mweb_1       |[0m /code/uper/views.py changed, reloading.
+[32mweb_1       |[0m Watching for file changes with StatReloader
+[32mweb_1       |[0m Performing system checks...
+[32mweb_1       |[0m 
+[32mweb_1       |[0m Exception in thread django-main-thread:
+[32mweb_1       |[0m Traceback (most recent call last):
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[32mweb_1       |[0m     self.run()
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[32mweb_1       |[0m     self._target(*self._args, **self._kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/autoreload.py", line 54, in wrapper
+[32mweb_1       |[0m     fn(*args, **kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+[32mweb_1       |[0m     self.check(display_num_errors=True)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[32mweb_1       |[0m     all_issues = self._run_checks(
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[32mweb_1       |[0m     return checks.run_checks(**kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[32mweb_1       |[0m     new_errors = check(app_configs=app_configs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+[32mweb_1       |[0m     return check_resolver(resolver)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+[32mweb_1       |[0m     return check_method()
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 399, in check
+[32mweb_1       |[0m     for pattern in self.url_patterns:
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[32mweb_1       |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[32mweb_1       |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[32mweb_1       |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:29 +0000] "GET /uper/request_ride/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:34 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:34 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:34 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[32mweb_1       |[0m     return import_module(self.urlconf_name)
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:34 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:35 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:35 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:35 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:35 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[35mnginx_1     |[0m 2020/02/07 16:48:35 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:35 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:35 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[35mnginx_1     |[0m 2020/02/07 16:48:35 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[35mnginx_1     |[0m 2020/02/07 16:48:35 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:35 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/edit_driver/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:36 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:36 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:37 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:37 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[35mnginx_1     |[0m 2020/02/07 16:48:37 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:37 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:37 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:37 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:37 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:37 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[32mweb_1       |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[32mweb_1       |[0m     path('uper/', include('uper.urls')),
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[32mweb_1       |[0m     urlconf_module = import_module(urlconf_module)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[32mweb_1       |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[32mweb_1       |[0m   File "/code/uper/urls.py", line 3, in <module>
+[32mweb_1       |[0m     from . import views
+[32mweb_1       |[0m   File "/code/uper/views.py", line 1, in <module>
+[32mweb_1       |[0m     from dateutil import parser
+[32mweb_1       |[0m ModuleNotFoundError: No module named 'dateutil'
+[35mnginx_1     |[0m 2020/02/07 16:48:37 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:37 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:38 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:38 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:38 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:38 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:38 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:38 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:38 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:38 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:38 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:38 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:39 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:39 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:39 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:39 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:48:40 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:48:40 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:27 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:27 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:28 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:28 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 2020/02/07 16:49:29 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:29 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:29 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:29 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:29 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:29 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:29 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/edit_driver/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/edit_driver/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/main_page/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:29 +0000] "GET /uper/edit_driver/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/main_page/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:35 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:35 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:36 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:36 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:36 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:36 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:36 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:36 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:49:37 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:49:37 [error] 6#6: *68 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+Stopping dockerdeploy_nginx_1 ... 
+Stopping dockerdeploy_web_1   ... 
+Stopping dockerdeploy_db_1    ... 
+[1A[2KStopping dockerdeploy_db_1    ... [32mdone[0m[1B[3A[2KStopping dockerdeploy_nginx_1 ... [32mdone[0m[3B[2A[2KStopping dockerdeploy_web_1   ... [32mdone[0m[2BGracefully stopping... (press Ctrl+C again to force)
+Sorry, try again.
+Starting dockerdeploy_db_1 ... 
+Starting dockerdeploy_db_1
+[1A[2KStarting dockerdeploy_db_1 ... [32mdone[0m[1BStarting dockerdeploy_web-init_1 ... 
+Starting dockerdeploy_web-init_1
+[1A[2KStarting dockerdeploy_web-init_1 ... [32mdone[0m[1BStarting dockerdeploy_web_1 ... 
+Starting dockerdeploy_web_1
+[1A[2KStarting dockerdeploy_web_1 ... [32mdone[0m[1BStarting dockerdeploy_nginx_1 ... 
+Starting dockerdeploy_nginx_1
+[1A[2KStarting dockerdeploy_nginx_1 ... [32mdone[0m[1BAttaching to dockerdeploy_db_1, dockerdeploy_web-init_1, dockerdeploy_web_1, dockerdeploy_nginx_1
+[36mdb_1        |[0m 
+[36mdb_1        |[0m PostgreSQL Database directory appears to contain a database; Skipping initialization
+[36mdb_1        |[0m 
+[36mdb_1        |[0m 2020-02-07 16:51:20.394 UTC [1] LOG:  starting PostgreSQL 12.1 (Debian 12.1-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+[36mdb_1        |[0m 2020-02-07 16:51:20.395 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33mweb-init_1  |[0m Traceback (most recent call last):
+[33mweb-init_1  |[0m   File "manage.py", line 21, in <module>
+[33mweb-init_1  |[0m     main()
+[36mdb_1        |[0m 2020-02-07 16:51:20.395 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[32mweb_1       |[0m Watching for file changes with StatReloader
+[33mweb-init_1  |[0m   File "manage.py", line 17, in main
+[36mdb_1        |[0m 2020-02-07 16:51:20.398 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33mweb-init_1  |[0m     execute_from_command_line(sys.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+[32mweb_1       |[0m Performing system checks...
+[32mweb_1       |[0m 
+[36mdb_1        |[0m 2020-02-07 16:51:20.433 UTC [25] LOG:  database system was shut down at 2020-02-07 16:49:39 UTC
+[33mweb-init_1  |[0m     utility.execute()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 375, in execute
+[36mdb_1        |[0m 2020-02-07 16:51:20.452 UTC [1] LOG:  database system is ready to accept connections
+[32mweb_1       |[0m Exception in thread django-main-thread:
+[32mweb_1       |[0m Traceback (most recent call last):
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+[33mweb-init_1  |[0m     self.fetch_command(subcommand).run_from_argv(self.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 323, in run_from_argv
+[32mweb_1       |[0m     self.run()
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/threading.py", line 870, in run
+[33mweb-init_1  |[0m     self.execute(*args, **cmd_options)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 361, in execute
+[32mweb_1       |[0m     self._target(*self._args, **self._kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/autoreload.py", line 54, in wrapper
+[32mweb_1       |[0m     fn(*args, **kwargs)
+[33mweb-init_1  |[0m     self.check()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[33mweb-init_1  |[0m     all_issues = self._run_checks(
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[33mweb-init_1  |[0m     return checks.run_checks(**kwargs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[33mweb-init_1  |[0m     new_errors = check(app_configs=app_configs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+[33mweb-init_1  |[0m     all_namespaces = _load_all_namespaces(resolver)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+[33mweb-init_1  |[0m     url_patterns = getattr(resolver, 'url_patterns', [])
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[32mweb_1       |[0m     self.check(display_num_errors=True)
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[33mweb-init_1  |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[33mweb-init_1  |[0m     return import_module(self.urlconf_name)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[32mweb_1       |[0m     all_issues = self._run_checks(
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[32mweb_1       |[0m     return checks.run_checks(**kwargs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[33mweb-init_1  |[0m     path('uper/', include('uper.urls')),
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[33mweb-init_1  |[0m     urlconf_module = import_module(urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[32mweb_1       |[0m     new_errors = check(app_configs=app_configs)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/uper/urls.py", line 3, in <module>
+[33mweb-init_1  |[0m     from . import views
+[33mweb-init_1  |[0m   File "/code/uper/views.py", line 1, in <module>
+[33mweb-init_1  |[0m     from dateutil import parser
+[33mweb-init_1  |[0m ModuleNotFoundError: No module named 'dateutil'
+[33mweb-init_1  |[0m Traceback (most recent call last):
+[32mweb_1       |[0m     return check_resolver(resolver)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+[33mweb-init_1  |[0m   File "manage.py", line 21, in <module>
+[32mweb_1       |[0m     return check_method()
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 399, in check
+[32mweb_1       |[0m     for pattern in self.url_patterns:
+[33mweb-init_1  |[0m     main()
+[33mweb-init_1  |[0m   File "manage.py", line 17, in main
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[32mweb_1       |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[33mweb-init_1  |[0m     execute_from_command_line(sys.argv)
+[32mweb_1       |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+[32mweb_1       |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[33mweb-init_1  |[0m     utility.execute()
+[32mweb_1       |[0m     return import_module(self.urlconf_name)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 375, in execute
+[33mweb-init_1  |[0m     self.fetch_command(subcommand).run_from_argv(self.argv)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[32mweb_1       |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 323, in run_from_argv
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m     self.execute(*args, **cmd_options)
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 361, in execute
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m     self.check()
+[32mweb_1       |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[32mweb_1       |[0m     path('uper/', include('uper.urls')),
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[33mweb-init_1  |[0m     all_issues = self._run_checks(
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/migrate.py", line 65, in _run_checks
+[32mweb_1       |[0m     urlconf_module = import_module(urlconf_module)
+[32mweb_1       |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     issues.extend(super()._run_checks(**kwargs))
+[32mweb_1       |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m     return checks.run_checks(**kwargs)
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[32mweb_1       |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m     new_errors = check(app_configs=app_configs)
+[32mweb_1       |[0m   File "/code/uper/urls.py", line 3, in <module>
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+[32mweb_1       |[0m     from . import views
+[33mweb-init_1  |[0m     all_namespaces = _load_all_namespaces(resolver)
+[32mweb_1       |[0m   File "/code/uper/views.py", line 1, in <module>
+[32mweb_1       |[0m     from dateutil import parser
+[32mweb_1       |[0m ModuleNotFoundError: No module named 'dateutil'
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+[33mweb-init_1  |[0m     url_patterns = getattr(resolver, 'url_patterns', [])
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[33mweb-init_1  |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[33mweb-init_1  |[0m     return import_module(self.urlconf_name)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[33mweb-init_1  |[0m     path('uper/', include('uper.urls')),
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[33mweb-init_1  |[0m     urlconf_module = import_module(urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/uper/urls.py", line 3, in <module>
+[33mweb-init_1  |[0m     from . import views
+[33mweb-init_1  |[0m   File "/code/uper/views.py", line 1, in <module>
+[33mweb-init_1  |[0m     from dateutil import parser
+[33mweb-init_1  |[0m ModuleNotFoundError: No module named 'dateutil'
+[33mweb-init_1  |[0m Traceback (most recent call last):
+[33mweb-init_1  |[0m   File "manage.py", line 21, in <module>
+[33mweb-init_1  |[0m     main()
+[33mweb-init_1  |[0m   File "manage.py", line 17, in main
+[33mweb-init_1  |[0m     execute_from_command_line(sys.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+[33mweb-init_1  |[0m     utility.execute()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 375, in execute
+[33mweb-init_1  |[0m     self.fetch_command(subcommand).run_from_argv(self.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 323, in run_from_argv
+[33mweb-init_1  |[0m     self.execute(*args, **cmd_options)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 361, in execute
+[33mweb-init_1  |[0m     self.check()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[33mweb-init_1  |[0m     all_issues = self._run_checks(
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/migrate.py", line 65, in _run_checks
+[33mweb-init_1  |[0m     issues.extend(super()._run_checks(**kwargs))
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[33mweb-init_1  |[0m     return checks.run_checks(**kwargs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[33mweb-init_1  |[0m     new_errors = check(app_configs=app_configs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+[33mweb-init_1  |[0m     all_namespaces = _load_all_namespaces(resolver)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+[33mweb-init_1  |[0m     url_patterns = getattr(resolver, 'url_patterns', [])
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[33mweb-init_1  |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[33mweb-init_1  |[0m     return import_module(self.urlconf_name)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[33mweb-init_1  |[0m     path('uper/', include('uper.urls')),
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[33mweb-init_1  |[0m     urlconf_module = import_module(urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/uper/urls.py", line 3, in <module>
+[33mweb-init_1  |[0m     from . import views
+[33mweb-init_1  |[0m   File "/code/uper/views.py", line 1, in <module>
+[33mweb-init_1  |[0m     from dateutil import parser
+[33mweb-init_1  |[0m ModuleNotFoundError: No module named 'dateutil'
+[33mweb-init_1  |[0m Traceback (most recent call last):
+[33mweb-init_1  |[0m   File "manage.py", line 21, in <module>
+[33mweb-init_1  |[0m     main()
+[33mweb-init_1  |[0m   File "manage.py", line 17, in main
+[33mweb-init_1  |[0m     execute_from_command_line(sys.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+[33mweb-init_1  |[0m     utility.execute()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 375, in execute
+[33mweb-init_1  |[0m     self.fetch_command(subcommand).run_from_argv(self.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 323, in run_from_argv
+[33mweb-init_1  |[0m     self.execute(*args, **cmd_options)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 361, in execute
+[33mweb-init_1  |[0m     self.check()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[33mweb-init_1  |[0m     all_issues = self._run_checks(
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/migrate.py", line 65, in _run_checks
+[33mweb-init_1  |[0m     issues.extend(super()._run_checks(**kwargs))
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[33mweb-init_1  |[0m     return checks.run_checks(**kwargs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[33mweb-init_1  |[0m     new_errors = check(app_configs=app_configs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+[33mweb-init_1  |[0m     all_namespaces = _load_all_namespaces(resolver)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+[33mweb-init_1  |[0m     url_patterns = getattr(resolver, 'url_patterns', [])
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[33mweb-init_1  |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[33mweb-init_1  |[0m     return import_module(self.urlconf_name)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[33mweb-init_1  |[0m     path('uper/', include('uper.urls')),
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[33mweb-init_1  |[0m     urlconf_module = import_module(urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/uper/urls.py", line 3, in <module>
+[33mweb-init_1  |[0m     from . import views
+[33mweb-init_1  |[0m   File "/code/uper/views.py", line 1, in <module>
+[33mweb-init_1  |[0m     from dateutil import parser
+[33mweb-init_1  |[0m ModuleNotFoundError: No module named 'dateutil'
+[35mnginx_1     |[0m 2020/02/07 16:51:29 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:29 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:30 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:30 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:30 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:30 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:30 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:30 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:30 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:30 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:31 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:31 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:31 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:31 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:31 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:31 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[35mnginx_1     |[0m 2020/02/07 16:51:31 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:31 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+[33mweb-init_1  |[0m Traceback (most recent call last):
+[33mweb-init_1  |[0m   File "manage.py", line 21, in <module>
+[33mweb-init_1  |[0m     main()
+[33mweb-init_1  |[0m   File "manage.py", line 17, in main
+[33mweb-init_1  |[0m     execute_from_command_line(sys.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+[33mweb-init_1  |[0m     utility.execute()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/__init__.py", line 375, in execute
+[33mweb-init_1  |[0m     self.fetch_command(subcommand).run_from_argv(self.argv)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 323, in run_from_argv
+[33mweb-init_1  |[0m     self.execute(*args, **cmd_options)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 361, in execute
+[33mweb-init_1  |[0m     self.check()
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 387, in check
+[33mweb-init_1  |[0m     all_issues = self._run_checks(
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/commands/migrate.py", line 65, in _run_checks
+[33mweb-init_1  |[0m     issues.extend(super()._run_checks(**kwargs))
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/management/base.py", line 377, in _run_checks
+[33mweb-init_1  |[0m     return checks.run_checks(**kwargs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/registry.py", line 72, in run_checks
+[33mweb-init_1  |[0m     new_errors = check(app_configs=app_configs)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+[33mweb-init_1  |[0m     all_namespaces = _load_all_namespaces(resolver)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+[33mweb-init_1  |[0m     url_patterns = getattr(resolver, 'url_patterns', [])
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+[33mweb-init_1  |[0m     patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 80, in __get__
+[33mweb-init_1  |[0m     res = instance.__dict__[self.name] = self.func(instance)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+[33mweb-init_1  |[0m     return import_module(self.urlconf_name)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/mysite/urls.py", line 21, in <module>
+[33mweb-init_1  |[0m     path('uper/', include('uper.urls')),
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/site-packages/django/urls/conf.py", line 34, in include
+[33mweb-init_1  |[0m     urlconf_module = import_module(urlconf_module)
+[33mweb-init_1  |[0m   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[33mweb-init_1  |[0m     return _bootstrap._gcd_import(name[level:], package, level)
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+[33mweb-init_1  |[0m   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[33mweb-init_1  |[0m   File "/code/uper/urls.py", line 3, in <module>
+[33mweb-init_1  |[0m     from . import views
+[33mweb-init_1  |[0m   File "/code/uper/views.py", line 1, in <module>
+[33mweb-init_1  |[0m     from dateutil import parser
+[33mweb-init_1  |[0m ModuleNotFoundError: No module named 'dateutil'
+[35mnginx_1     |[0m 2020/02/07 16:51:31 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.197.209.214, server: vcm-2182.vm.duke.edu, request: "GET /uper/main_page/ HTTP/1.1", upstream: "http://172.18.0.4:8000/uper/main_page/", host: "vcm-12360.vm.duke.edu:8000", referrer: "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/"
+[35mnginx_1     |[0m 10.197.209.214 - - [07/Feb/2020:16:51:31 +0000] "GET /uper/main_page/ HTTP/1.1" 502 559 "http://vcm-12360.vm.duke.edu:8000/uper/driver_ride_search/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" "-"
+Stopping dockerdeploy_nginx_1    ... 
+Stopping dockerdeploy_web_1      ... 
+Stopping dockerdeploy_web-init_1 ... 
+Stopping dockerdeploy_db_1       ... 
+[4A[2KStopping dockerdeploy_nginx_1    ... [32mdone[0m[4BKilling dockerdeploy_web_1      ... 
+Killing dockerdeploy_web-init_1 ... 
+Killing dockerdeploy_db_1       ... 
+[3A[2KKilling dockerdeploy_web_1      ... [32mdone[0m[3B[1A[2KKilling dockerdeploy_db_1       ... [32mdone[0m[1B[2A[2KKilling dockerdeploy_web-init_1 ... [32mdone[0m[2BGracefully stopping... (press Ctrl+C again to force)

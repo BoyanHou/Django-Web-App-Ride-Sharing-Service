@@ -11,11 +11,24 @@ from django.conf import settings
 def register_process(request):
     # check if the username has already been used
     user_name_existed = User.objects.filter(username = request.POST['username'])
+    if not request.POST['username']:
+        return HttpResponse("Please enter username!")
     if user_name_existed:
         return HttpResponse("Sorry, this username has already been taken!")
-    user = User(username=request.POST['username'], password=request.POST['password'],email=request.POST['email'],)
+    if not request.POST['password']:
+        return HttpResponse("Please enter password!")
+    if not request.POST['email']:
+        return HttpResponse("Please enter email!")
 
+    user = User(username=request.POST['username'], password=request.POST['password'],email=request.POST['email'],)
     user.save()
+    send_mail(
+        'Uper Drive:',
+        'Welcome! You have registered successfully!',
+        'Uperofficial@gmail.com',
+        [request.POST['email']],
+        fail_silently=False,
+    )
     return HttpResponseRedirect(reverse('uper:index')) # use reverse() to avoid hard-code url
 
 def login(request):
@@ -123,6 +136,8 @@ def request_or_edit_ride_process(request):
     user = User.objects.get(pk = user_id)
 
     if request.POST["operation"] == "request":
+        if datetime.datetime.strptime(request.POST["arrival_datetime"], "%Y-%m-%dT%H:%M") < datetime.datetime.now():
+            return HttpResponse("You have invalid arrival time!")
     # Create a new personal_ride
         personal_ride = Personal_ride(
             user = user,
@@ -243,8 +258,8 @@ def driver_reg_process(request):
     #return error page if the the input except other_info is empty
     if not drivername: 
         return HttpResponse("Please tell us your name!")
-    if not vehicle_type:
-        return HttpResponse("Please tell us your vehicle type!")
+    # if not vehicle_type:
+    #     return HttpResponse("Please tell us your vehicle type!")
     if not license_number:
         return HttpResponse("Please tell us your license number!")
     if not capacity:
@@ -279,14 +294,14 @@ def edit_driver(request):
         return HttpResponse("Driver doesn't exist!")
     if(drivername):
         driver.drivername = drivername
-    if(vehicle_type):
-        driver.vehicle_type = vehicle_type
+    #if(vehicle_type):
+    driver.vehicle_type = vehicle_type
     if(license_number):
         driver.license_number = license_number
     if(capacity):
         driver.capacity = capacity
-    if(other_info):
-        driver.other_info = other_info
+    #if(other_info):
+    driver.other_info = other_info
     driver.save()
     return HttpResponseRedirect(reverse('uper:main_page'))
 
@@ -297,13 +312,20 @@ def shareride_search_result(request):
     # get user login info
     user_id = request.session["user_id"]
     user = User.objects.get(pk = user_id)
-
+    
     # read html form
     passenger_number = int(request.POST['passenger_number'])
     destination = request.POST['destination']
     arrival_earliest = request.POST['arrival_earliest']
+    if datetime.datetime.strptime(request.POST["arrival_earliest"], "%Y-%m-%dT%H:%M") < datetime.datetime.now():
+            return HttpResponse("You have invalid earliest time!")
+
     arrival_latest = request.POST['arrival_latest']
-#    print(arrival_ealiest)
+    if datetime.datetime.strptime(request.POST["arrival_latest"], "%Y-%m-%dT%H:%M") < datetime.datetime.now():
+        return HttpResponse("You have invalid latest time!")
+    if datetime.datetime.strptime(request.POST["arrival_earliest"], "%Y-%m-%dT%H:%M") > datetime.datetime.strptime(request.POST["arrival_latest"], "%Y-%m-%dT%H:%M"):
+        return HttpResponse("earliest time should be before latest time!")
+    #    print(arrival_ealiest)
     #the number of passenger should be valid number
     if(passenger_number <= 0):
         return HttpResponse("Your passenger_number is invalid",)
