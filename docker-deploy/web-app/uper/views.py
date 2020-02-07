@@ -27,13 +27,13 @@ def login(request):
             return HttpResponse('Wrong username or password!')
         
 def main_page(request):
-    send_mail(
-        'Uper Drive',
-        'Your Uper Request Has A Driver',
-        'boyan.hou@outlook.com',
-        ['hbyeddy123@gmail.com'],
-        fail_silently=False,
-    )
+    # send_mail(
+    #     'Uper Drive',
+    #     'Your Uper Request Has A Driver',
+    #     'boyan.hou@outlook.com',
+    #     ['hbyeddy123@gmail.com'],
+    #     fail_silently=False,
+    # )
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
     
@@ -371,13 +371,13 @@ def take_order(request):
     ride.personal_ride_set.add(personal_ride)
     
     # write the email function here!
-    send_mail(
-        'Uper Drive',
-        'Your Uper Request Has A Driver',
-        'boyan.hou@outlook.com',
-        ['hbyeddy123@gmail.com'],
-        fail_silently=False,
-    )
+    # send_mail(
+    #     'Uper Drive',
+    #     'Your Uper Request Has A Driver',
+    #     'boyan.hou@outlook.com',
+    #     ['hbyeddy123@gmail.com'],
+    #     fail_silently=False,
+    # )
 
     ride.save()
     return HttpResponseRedirect(reverse('uper:main_page'))
