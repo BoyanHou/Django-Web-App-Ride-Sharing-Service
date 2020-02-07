@@ -48,9 +48,9 @@
     {% if personal_ride.identity == "owner" or personal_ride.identity == "sharer" %}
     {% if personal_ride.ride.driver  %}
     <br />
-    <li>driver name: {{personal_ride.ride.driver.drivername}} </li>
-    <li>vehicle type: {{personal_ride.driver.vehicle_type}} </li>      
-    <li>license number: {{personal_ride.driver.license_number}} </li>
+    <li>driver name: {{ personal_ride.ride.driver.drivername }} </li>
+    <li>vehicle type: {{ personal_ride.ride.driver.vehicle_type }} </li>      
+    <li>license number: {{ personal_ride.ride.driver.license_number }} </li>
     <br />
     {% endif %}
     {% else %}

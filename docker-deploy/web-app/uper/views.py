@@ -313,6 +313,8 @@ def join_shareride(request):
 def driver_ride_search(request):
     user_id = request.session["user_id"]
     user = User.objects.get(pk = user_id)
+    if not hasattr(user, 'driver'):
+        return HttpResponse("You are not a driver yet!")
     capacity = user.driver.capacity
     other_info = user.driver.other_info
     vehicle_type = user.driver.vehicle_type
@@ -327,8 +329,17 @@ def take_order(request):
     user = User.objects.get(pk = user_id)
     ride = Ride.objects.get(pk = request.POST["ride_id"])
     user.driver.ride_set.add(ride);
+    user.personal_ride_set.create(ride = ride,
+                                  identity = "driver",
+                                  called_time = datetime.datetime.now(),
+                                  party_person_number = 0,
+    )
+    user.save()
+    
     ride.state = "confirmed"
+    ride.save()
     return HttpResponseRedirect(reverse('uper:main_page'))
+
 # Below are the common tool functions:
 def login_status_is_valid(request):        
     user_id = request.session['user_id']

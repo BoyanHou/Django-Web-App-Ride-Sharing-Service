@@ -1,0 +1,11 @@
+1. the owner should not be able to select a datetime that is older than "now"
+
+2. the sharer should not be able to search for a ride whose starting range is older than "now"
+
+3. the driver should not be able to search for a ride whose starting range is older than "now"
+
+4. What if a user logged in and than forget to log out, and he was logged in a public computer? How to wipe out the user data after the browser is closed?
+
+5. What if a ride's target arrival time has past "now"? How should we constantly update the database and clean it up?
+
+6. What if a user delete his/her account? Would the set One-to-One field nad Many-to-One field be able to handle this and delete all related rides and rider relation?

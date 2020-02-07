@@ -1,0 +1,435 @@
+Watching for file changes with StatReloader
+[03/Feb/2020 05:13:01] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:13:05] "GET /uper/driver_register/ HTTP/1.1" 200 40
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 03, 2020 - 05:12:46
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[03/Feb/2020 05:16:58] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:17:05] "GET /uper/request_ride/ HTTP/1.1" 200 2799
+[03/Feb/2020 05:17:20] "GET /uper/view_info/ HTTP/1.1" 200 299
+[03/Feb/2020 05:17:46] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+[03/Feb/2020 05:17:55] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-03 05:18:00.510871) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (2020-02-10 00:12:00) while time zone support is active.
+  RuntimeWarning)
+[03/Feb/2020 05:18:00] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:18:00] "GET /uper/main_page/ HTTP/1.1" 200 4564
+[03/Feb/2020 05:18:26] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:18:27] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:18:28] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:18:42] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:18:45] "POST /uper/edit_ride/ HTTP/1.1" 200 2009
+[03/Feb/2020 05:18:49] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:18:49] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:18:49] "GET /uper/main_page/ HTTP/1.1" 200 4564
+[03/Feb/2020 05:18:50] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:18:52] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:18:53] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:18:58] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+[03/Feb/2020 05:19:00] "POST /uper/edit_ride/ HTTP/1.1" 200 2009
+[03/Feb/2020 05:19:07] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:19:07] "GET /uper/main_page/ HTTP/1.1" 200 4567
+[03/Feb/2020 05:19:09] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:19:10] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:19:11] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:19:12] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:19:13] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:19:15] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:19:18] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:19:22] "GET /uper/view_info/ HTTP/1.1" 200 298
+[03/Feb/2020 05:19:32] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+[03/Feb/2020 05:19:36] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:19:36] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:19:42] "GET /uper/view_info/ HTTP/1.1" 200 298
+[03/Feb/2020 05:19:54] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+[03/Feb/2020 05:19:57] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:19:57] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:19:58] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+[03/Feb/2020 05:20:00] "GET /uper/view_info/ HTTP/1.1" 200 289
+[03/Feb/2020 05:20:03] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:20:10] "POST /uper/edit_ride/ HTTP/1.1" 200 2012
+[03/Feb/2020 05:20:14] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:20:14] "GET /uper/main_page/ HTTP/1.1" 200 4568
+[03/Feb/2020 05:20:16] "GET /uper/driver_ride_search/ HTTP/1.1" 200 651
+Internal Server Error: /uper/take_order/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 332, in take_order
+    user.personal_ride.create(ride = ride,
+AttributeError: 'User' object has no attribute 'personal_ride'
+[03/Feb/2020 05:20:18] "POST /uper/take_order/ HTTP/1.1" 500 66237
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 03, 2020 - 05:16:55
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Internal Server Error: /uper/take_order/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "called_time" violates not-null constraint
+DETAIL:  Failing row contains (24, null, driver, 0, 12, 18).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 334, in take_order
+    party_person_number = 0,
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/fields/related_descriptors.py", line 676, in create
+    return super(RelatedManager, self.db_manager(db)).create(**kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1384, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "called_time" violates not-null constraint
+DETAIL:  Failing row contains (24, null, driver, 0, 12, 18).
+
+[03/Feb/2020 05:21:12] "POST /uper/take_order/ HTTP/1.1" 500 153463
+[03/Feb/2020 05:21:21] "GET /uper/driver_ride_search/ HTTP/1.1" 200 651
+Internal Server Error: /uper/take_order/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "called_time" violates not-null constraint
+DETAIL:  Failing row contains (25, null, driver, 0, 12, 18).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 334, in take_order
+    party_person_number = 0,
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/fields/related_descriptors.py", line 676, in create
+    return super(RelatedManager, self.db_manager(db)).create(**kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 746, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 784, in save_base
+    force_update, using, update_fields,
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/base.py", line 926, in _do_insert
+    using=using, raw=raw,
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1384, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "called_time" violates not-null constraint
+DETAIL:  Failing row contains (25, null, driver, 0, 12, 18).
+
+[03/Feb/2020 05:21:22] "POST /uper/take_order/ HTTP/1.1" 500 153463
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 03, 2020 - 05:21:05
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Internal Server Error: /uper/take_order/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 334, in take_order
+    called_time = datetime.now(),
+AttributeError: module 'datetime' has no attribute 'now'
+[03/Feb/2020 05:22:29] "POST /uper/take_order/ HTTP/1.1" 500 66263
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 03, 2020 - 05:22:24
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-03 05:22:59.307629) while time zone support is active.
+  RuntimeWarning)
+[03/Feb/2020 05:22:59] "POST /uper/take_order/ HTTP/1.1" 302 0
+[03/Feb/2020 05:22:59] "GET /uper/main_page/ HTTP/1.1" 200 2883
+[03/Feb/2020 05:23:04] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[03/Feb/2020 05:23:22] "GET /uper/main_page/ HTTP/1.1" 200 4345
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 03, 2020 - 05:22:55
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[03/Feb/2020 05:28:37] "GET /uper/request_ride/ HTTP/1.1" 200 2799
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-03 05:29:02.526898) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (1211-12-31 02:12:00) while time zone support is active.
+  RuntimeWarning)
+[03/Feb/2020 05:29:02] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[03/Feb/2020 05:29:02] "GET /uper/main_page/ HTTP/1.1" 200 3837
+[03/Feb/2020 05:29:10] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (1211-12-31 02:11:00) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (1211-12-31 02:10:00) while time zone support is active.
+  RuntimeWarning)
+[03/Feb/2020 05:30:02] "POST /uper/shareride_search_result/ HTTP/1.1" 200 16
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (1211-12-31 02:13:00) while time zone support is active.
+  RuntimeWarning)
+[03/Feb/2020 05:30:06] "POST /uper/shareride_search_result/ HTTP/1.1" 200 766
+[03/Feb/2020 05:30:09] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[03/Feb/2020 05:30:09] "GET /uper/main_page/ HTTP/1.1" 200 4345
+[03/Feb/2020 05:30:14] "GET /uper/main_page/ HTTP/1.1" 200 3837
+[03/Feb/2020 12:42:37] code 400, message Bad request version ('À\x14À')
+[03/Feb/2020 12:42:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+Not Found: /
+[03/Feb/2020 13:51:09] "GET / HTTP/1.1" 404 2031
+----------------------------------------
+Exception happened during processing of request from ('185.184.79.32', 60000)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 172, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 182, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+Not Found: /ip.ws.126.net:443
+[04/Feb/2020 02:19:17] "CONNECT ip.ws.126.net:443 HTTP/1.1" 404 1670
+Not Found: /
+[04/Feb/2020 14:45:23] "GET / HTTP/1.1" 404 2032
+Not Found: /ip.ws.126.net:443
+[04/Feb/2020 20:23:19] "CONNECT ip.ws.126.net:443 HTTP/1.1" 404 1670
+----------------------------------------
+Exception happened during processing of request from ('222.186.19.221', 55548)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 174, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 182, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+Not Found: /
+[05/Feb/2020 00:20:28] "GET / HTTP/1.1" 404 2031
+Not Found: /
+[05/Feb/2020 06:01:05] "GET / HTTP/1.1" 404 2031
+----------------------------------------
+Exception happened during processing of request from ('198.108.67.48', 45366)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 174, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 182, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('185.151.242.90', 60000)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 172, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 182, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+[05/Feb/2020 16:11:05] code 400, message Bad request syntax ('\x16\x03\x01\x00u\x01\x00\x00q\x03\x03$#j\x97\x15RC\tã\x03ì\\Ú\xa0³Ò¯\x99ü\x1a\x85n\x8ab¤Î\x14\x01E÷PL\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\tÀ\x14À')
+[05/Feb/2020 16:11:05] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+----------------------------------------
+Exception happened during processing of request from ('185.156.177.224', 20548)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/socketserver.py", line 654, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.6/socketserver.py", line 364, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.6/socketserver.py", line 724, in __init__
+    self.handle()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 172, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python3.6/dist-packages/django/core/servers/basehttp.py", line 182, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+[05/Feb/2020 22:51:33] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[05/Feb/2020 22:51:33] "  /*à     Cookie: mstshash=Administr" 400 -
+[05/Feb/2020 22:51:34] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[05/Feb/2020 22:51:34] "  /*à     Cookie: mstshash=Administr" 400 -
+Not Found: /
+[06/Feb/2020 03:15:03] "GET / HTTP/1.0" 404 2032
+Not Found: /
+[06/Feb/2020 03:43:36] "GET / HTTP/1.1" 404 2031
+Not Found: /
+[06/Feb/2020 11:33:38] "GET / HTTP/1.1" 404 2031
+Not Found: /ip.ws.126.net:443
+[06/Feb/2020 19:21:49] "CONNECT ip.ws.126.net:443 HTTP/1.1" 404 1670
+Not Found: /http:/123.125.114.144/
+[06/Feb/2020 19:52:04] "HEAD http://123.125.114.144/ HTTP/1.1" 404 1682
+[07/Feb/2020 04:16:43] "GET /uper/ HTTP/1.1" 200 543
+Not Found: /favicon.ico
+[07/Feb/2020 04:16:43] "GET /favicon.ico HTTP/1.1" 404 2082
+Not Found: /favicon.ico
+[07/Feb/2020 04:16:44] "GET /favicon.ico HTTP/1.1" 404 2082
+[07/Feb/2020 04:16:47] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:17:08] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:17:08] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:17:11] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:17:17] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:17:18] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:17:19] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:17:27] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:17:27] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:17:29] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:17:38] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:17:38] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:17:38] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:17:47] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:17:47] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:17:49] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:17:56] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:17:56] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:17:57] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:18:03] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:18:03] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:18:04] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:18:15] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:18:15] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:18:17] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 04:18:17] "GET /uper/main_page/ HTTP/1.1" 200 2873
+[07/Feb/2020 04:18:22] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:18:33] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:18:33] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:18:34] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:18:58] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:18:58] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:19:05] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 04:19:06] "GET /uper/main_page/ HTTP/1.1" 200 2881
+[07/Feb/2020 04:19:11] "GET /uper/request_ride/ HTTP/1.1" 200 2799
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 04:19:26.949353) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (1121-02-11 02:12:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:19:26] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:19:27] "GET /uper/main_page/ HTTP/1.1" 200 3852
+[07/Feb/2020 04:19:38] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:19:41] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:19:51] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 04:19:51] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:20:08] "POST /uper/login/ HTTP/1.1" 200 27
+[07/Feb/2020 04:20:12] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:20:18] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:20:18] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:20:26] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 04:20:26] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 04:20:36] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (9999-09-09 09:09:00) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-01-01 00:00:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:21:01] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
