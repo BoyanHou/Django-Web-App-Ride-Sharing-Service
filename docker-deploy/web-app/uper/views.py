@@ -296,7 +296,15 @@ def shareride_search_result(request):
     if(passenger_number <= 0):
         return HttpResponse("Your passenger_number is invalid",)
     #search for open rides that match our requirment
-    ride_list_found = Ride.objects.filter(destination = destination , arrival_datetime__lte = arrival_latest,can_share = True,).filter(arrival_datetime__gte = arrival_earliest,state= "open")
+    ride_list_first_found = Ride.objects.filter(destination = destination , arrival_datetime__lte = arrival_latest,can_share = True,).filter(arrival_datetime__gte = arrival_earliest,state= "open")
+    ride_list_found = []
+    for myrides in ride_list_first_found:
+        flag = True 
+        for p_rs in myrides.personal_ride_set.all():
+            if p_rs.user.id == user_id:
+                flag = False
+        if flag:
+            ride_list_found.append(myrides)
     if(ride_list_found):
         context = {'ride_list_found':ride_list_found,'sharer_number':passenger_number,}
         return render(request,'uper/shareride_search_result.html',context)
@@ -336,7 +344,15 @@ def driver_ride_search(request):
     capacity = user.driver.capacity
     other_info = user.driver.other_info
     vehicle_type = user.driver.vehicle_type
-    driver_ride_list_found = Ride.objects.filter(state="open",total_rider_number__lte=capacity, other_info = other_info, required_vehicle_type = vehicle_type)
+    driver_ride_list_first_found = Ride.objects.filter(state="open",total_rider_number__lte=capacity, other_info = other_info, required_vehicle_type = vehicle_type,)
+    driver_ride_list_found = []
+    for myride in driver_ride_list_first_found:
+        flag = True 
+        for p_r in myride.personal_ride_set.all():
+            if p_r.user.id == user_id:
+                flag = False
+        if flag:
+            driver_ride_list_found.append(myride)
     if(driver_ride_list_found):
         context = {'driver_ride_list_found':driver_ride_list_found,'driver_id':user_id}
         return render(request,'uper/driver_ride_list_found.html',context)
