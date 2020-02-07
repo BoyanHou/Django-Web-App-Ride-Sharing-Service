@@ -9,6 +9,10 @@ from .models import User, Driver, Ride, Personal_ride
 from django.conf import settings
 
 def register_process(request):
+    # check if the username has already been used
+    user_name_existed = User.objects.filter(username = request.POST['username'])
+    if user_name_existed:
+        return HttpResponse("Sorry, this username has already been taken!")
     user = User(username=request.POST['username'], password=request.POST['password'])
     user.save()
     return HttpResponseRedirect(reverse('uper:index')) # use reverse() to avoid hard-code url

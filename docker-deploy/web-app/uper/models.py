@@ -12,7 +12,7 @@ class User(models.Model):
 class Driver(models.Model):
     drivername = models.CharField(max_length=20)
     vehicle_type = models.CharField(max_length=20)
-    license_number = models.IntegerField(default=0)
+    license_number = models.CharField(max_length=20)
     capacity = models.IntegerField(default=0)
     other_info = models.CharField(max_length=80)
     user = models.OneToOneField(
