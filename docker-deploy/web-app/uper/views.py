@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import * #to compare date
+from django.core.mail import send_mail
 import datetime
 from .models import User, Driver, Ride, Personal_ride
 
@@ -26,6 +27,13 @@ def login(request):
             return HttpResponse('Wrong username or password!')
         
 def main_page(request):
+    send_mail(
+        'Uper Drive',
+        'Your Uper Request Has A Driver',
+        'boyan.hou@outlook.com',
+        ['hbyeddy123@gmail.com'],
+        fail_silently=False,
+    )
     if not login_status_is_valid(request):
         return HttpResponse("Please Login First!");
     
@@ -46,7 +54,7 @@ def main_page(request):
                             'list':personal_ride_list_as_sharer},
                            'personal_ride_list_as_driver':
                            {'identity':"driver",
-                            list:personal_ride_list_as_driver},
+                            'list':personal_ride_list_as_driver},
     }
     
     # build context dictionary to inject into html page
@@ -363,6 +371,13 @@ def take_order(request):
     ride.personal_ride_set.add(personal_ride)
     
     # write the email function here!
+    send_mail(
+        'Uper Drive',
+        'Your Uper Request Has A Driver',
+        'boyan.hou@outlook.com',
+        ['hbyeddy123@gmail.com'],
+        fail_silently=False,
+    )
 
     ride.save()
     return HttpResponseRedirect(reverse('uper:main_page'))

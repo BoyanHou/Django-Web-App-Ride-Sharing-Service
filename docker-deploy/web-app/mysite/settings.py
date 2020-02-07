@@ -27,9 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# Email Settings
+EMAIL_HOST = 'smtp.gmail.com'  # 发送邮件的服务器地址
+EMAIL_HOST_USER = 'hbyeddy123@gmail.com'  # 不含‘@126.com’的后缀
+EMAIL_HOST_PASSWORD = 'Hbyltt1314'  # 非邮箱登录密码
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'hbyeddy123@gmail.com'  # 设置默认的发件人
+
 
 # Application definition
-
 INSTALLED_APPS = [
     'uper.apps.UperConfig',
     'django.contrib.admin',
