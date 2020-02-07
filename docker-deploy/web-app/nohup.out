@@ -433,3 +433,957 @@ Not Found: /favicon.ico
 /usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-01-01 00:00:00) while time zone support is active.
   RuntimeWarning)
 [07/Feb/2020 04:21:01] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+[07/Feb/2020 04:31:31] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[07/Feb/2020 04:31:32] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 04:31:36] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 04:34:32] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (9999-12-12 00:12:00) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-12-12 00:12:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:34:51] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+Watching for file changes with StatReloader
+[07/Feb/2020 04:37:45] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+[07/Feb/2020 04:38:44] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[07/Feb/2020 04:38:44] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 04:38:48] "GET /uper/driver_ride_search/ HTTP/1.1" 200 25
+[07/Feb/2020 04:38:50] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-01-01 12:31:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:39:07] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+[07/Feb/2020 04:39:19] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[07/Feb/2020 04:39:19] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 04:39:21] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (9999-12-11 00:12:00) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0010-01-01 11:11:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:39:39] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+[07/Feb/2020 04:39:41] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[07/Feb/2020 04:39:41] "GET /uper/main_page/ HTTP/1.1" 200 2882
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 03, 2020 - 05:26:49
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:36:14
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/autoreload.py", line 53, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 395, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 382, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 407, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 588, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 581, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/mysite/urls.py", line 21, in <module>
+    path('uper/', include('uper.urls')),
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/urls.py", line 3, in <module>
+    from . import views
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 310
+    personal_ride = Personal_ride(
+    ^
+IndentationError: unexpected indent
+
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/autoreload.py", line 53, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 395, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 382, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 407, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 588, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 581, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/mysite/urls.py", line 21, in <module>
+    path('uper/', include('uper.urls')),
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/urls.py", line 3, in <module>
+    from . import views
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 310
+    personal_ride = Personal_ride(
+    ^
+IndentationError: unexpected indent
+
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:42:38
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:42:37
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:42:59
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:00
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:37
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:38
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:50
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:49
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:57
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:43:56
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:44:15
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:44:14
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:44:25
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:44:24
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:45:02
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:45:02
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:45:29
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:45:28
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:45:49
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:45:49
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[07/Feb/2020 04:46:10] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (9999-09-09 09:09:00) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-01-01 11:11:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:46:26] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+Internal Server Error: /uper/join_shareride/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 325, in join_shareride
+    ride.personal_ride_set.add(presonal_ride)
+NameError: name 'presonal_ride' is not defined
+[07/Feb/2020 04:46:30] "POST /uper/join_shareride/ HTTP/1.1" 500 66781
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:46:00
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:46:00
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 04:47:00.931392) while time zone support is active.
+  RuntimeWarning)
+Internal Server Error: /uper/join_shareride/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 326, in join_shareride
+    ride.personal_ride_set.add(presonal_ride)
+NameError: name 'presonal_ride' is not defined
+[07/Feb/2020 04:47:00] "POST /uper/join_shareride/ HTTP/1.1" 500 66779
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 04:47:10.462539) while time zone support is active.
+  RuntimeWarning)
+Internal Server Error: /uper/join_shareride/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 326, in join_shareride
+    ride.personal_ride_set.add(presonal_ride)
+NameError: name 'presonal_ride' is not defined
+[07/Feb/2020 04:47:10] "POST /uper/join_shareride/ HTTP/1.1" 500 66779
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:46:58
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:46:59
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 04:47:27.088358) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:47:27] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[07/Feb/2020 04:47:27] "GET /uper/main_page/ HTTP/1.1" 200 4522
+[07/Feb/2020 04:47:42] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 04:47:42] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:47:47] "POST /uper/login/ HTTP/1.1" 200 27
+[07/Feb/2020 04:47:49] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 04:48:00] "POST /uper/register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:48:00] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 04:48:08] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 04:48:08] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 04:48:16] "GET /uper/share_ride_search/ HTTP/1.1" 200 663
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (9999-09-09 00:12:00) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (0001-01-01 00:12:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:48:33] "POST /uper/shareride_search_result/ HTTP/1.1" 200 1979
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 04:48:36.224763) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:48:36] "POST /uper/join_shareride/ HTTP/1.1" 302 0
+[07/Feb/2020 04:48:36] "GET /uper/main_page/ HTTP/1.1" 200 3491
+[07/Feb/2020 04:49:16] "GET /uper/request_ride/ HTTP/1.1" 200 2799
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 04:49:48.507004) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (2020-09-09 00:12:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:49:48] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:49:48] "GET /uper/main_page/ HTTP/1.1" 200 4466
+[07/Feb/2020 04:49:54] "POST /uper/edit_ride/ HTTP/1.1" 200 2023
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (2020-09-09 12:12:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 04:50:04] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[07/Feb/2020 04:50:04] "GET /uper/main_page/ HTTP/1.1" 200 4466
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:47:25
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:47:25
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:51:55
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:51:55
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:03
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:03
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:20
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:21
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:25
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:25
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/autoreload.py", line 53, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 395, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 382, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 407, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 588, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 581, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/mysite/urls.py", line 21, in <module>
+    path('uper/', include('uper.urls')),
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/urls.py", line 3, in <module>
+    from . import views
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 356
+    personal_ride.save()
+    ^
+IndentationError: unexpected indent
+
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/autoreload.py", line 53, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 395, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/usr/local/lib/python3.6/dist-packages/django/core/management/base.py", line 382, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 407, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 588, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/resolvers.py", line 581, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/mysite/urls.py", line 21, in <module>
+    path('uper/', include('uper.urls')),
+  File "/usr/local/lib/python3.6/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/urls.py", line 3, in <module>
+    from . import views
+  File "/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py", line 356
+    personal_ride.save()
+    ^
+IndentationError: unexpected indent
+
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:48
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:49
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:54
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:52:55
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:53:03
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:53:03
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:57:59
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:57:59
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:59:31
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:59:31
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:59:54
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 04:59:54
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:04
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:04
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:41
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:40
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:51
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:51
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[07/Feb/2020 05:02:43] "GET /uper/driver_ride_search/ HTTP/1.1" 200 25
+[07/Feb/2020 05:02:49] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 05:02:49] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 05:02:50] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 05:02:57] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 05:02:57] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:03:00] "GET /uper/driver_register/ HTTP/1.1" 200 782
+[07/Feb/2020 05:03:27] "POST /uper/driver_register_process/ HTTP/1.1" 302 0
+[07/Feb/2020 05:03:27] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:03:29] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:03:32] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:03:34] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:03:35] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:03:37] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:03:38] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:03:40] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:05:39] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:05:45] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 05:05:45] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 05:05:52] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 05:05:53] "GET /uper/main_page/ HTTP/1.1" 200 3853
+[07/Feb/2020 05:06:04] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 05:06:04] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 05:06:08] "POST /uper/login/ HTTP/1.1" 200 27
+[07/Feb/2020 05:06:13] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 05:06:13] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:06:17] "GET /uper/edit_driver/ HTTP/1.1" 200 725
+[07/Feb/2020 05:06:32] "POST /uper/edit_driver_process/ HTTP/1.1" 302 0
+[07/Feb/2020 05:06:32] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:06:33] "GET /uper/driver_ride_search/ HTTP/1.1" 200 1132
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 05:06:39.224950) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 05:06:39] "POST /uper/take_order/ HTTP/1.1" 302 0
+[07/Feb/2020 05:06:39] "GET /uper/main_page/ HTTP/1.1" 200 2882
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:57
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:01:58
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:09:38
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:09:39
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+[07/Feb/2020 05:09:55] "GET /uper/driver_ride_search/ HTTP/1.1" 200 649
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 05:09:57.127731) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 05:09:57] "POST /uper/take_order/ HTTP/1.1" 302 0
+[07/Feb/2020 05:09:57] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:14:15] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:25:32] "GET /uper/driver_ride_search/ HTTP/1.1" 200 17
+[07/Feb/2020 05:25:37] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 05:25:38] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 05:25:39] "GET /uper/register/ HTTP/1.1" 200 525
+[07/Feb/2020 05:25:55] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 05:25:55] "GET /uper/main_page/ HTTP/1.1" 200 2881
+[07/Feb/2020 05:25:58] "GET /uper/request_ride/ HTTP/1.1" 200 2799
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 05:26:16.292268) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Ride.arrival_datetime received a naive datetime (1121-12-12 00:12:00) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 05:26:16] "POST /uper/request_or_edit_ride_process/ HTTP/1.1" 302 0
+[07/Feb/2020 05:26:16] "GET /uper/main_page/ HTTP/1.1" 200 3854
+[07/Feb/2020 05:26:17] "POST /uper/logout/ HTTP/1.1" 302 0
+[07/Feb/2020 05:26:17] "GET /uper/ HTTP/1.1" 200 543
+[07/Feb/2020 05:26:27] "POST /uper/login/ HTTP/1.1" 302 0
+[07/Feb/2020 05:26:27] "GET /uper/main_page/ HTTP/1.1" 200 2882
+[07/Feb/2020 05:26:29] "GET /uper/driver_ride_search/ HTTP/1.1" 200 653
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:09:41
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+/home/ubuntu/ece568/erss-hwk1-bh214/docker-deploy/web-app/uper/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 07, 2020 - 05:09:40
+Django version 3.0.2, using settings 'mysite.settings'
+Starting development server at http://0:8080/
+Quit the server with CONTROL-C.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+/usr/local/lib/python3.6/dist-packages/django/db/models/fields/__init__.py:1364: RuntimeWarning: DateTimeField Personal_ride.called_time received a naive datetime (2020-02-07 05:29:09.960061) while time zone support is active.
+  RuntimeWarning)
+[07/Feb/2020 05:29:09] "POST /uper/take_order/ HTTP/1.1" 302 0
+[07/Feb/2020 05:29:10] "GET /uper/main_page/ HTTP/1.1" 200 2882

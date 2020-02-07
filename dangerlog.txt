@@ -9,3 +9,7 @@
 5. What if a ride's target arrival time has past "now"? How should we constantly update the database and clean it up?
 
 6. What if a user delete his/her account? Would the set One-to-One field nad Many-to-One field be able to handle this and delete all related rides and rider relation?
+
+7. a driver should not be able to take/search for his own request as owner/sharer
+
+8. a sharer should not be able to join/search for his own request as owner/driver

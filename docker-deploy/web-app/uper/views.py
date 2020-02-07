@@ -303,10 +303,28 @@ def shareride_search_result(request):
     return HttpResponse("No ride is found")
 
 def join_shareride(request):
+    if not login_status_is_valid(request):
+        return HttpResponse("Please Login First!");
+    
+    # get user login info
+    user_id = request.session["user_id"]
+    user = User.objects.get(pk = user_id)
+    personal_ride = Personal_ride(
+        user = user,
+        called_time = datetime.datetime.now(),
+        identity = "sharer",
+        party_person_number = int(request.POST["sharer_num"]),
+    )
+    personal_ride.save()
+    
     ride_id = request.POST["ride_id"]
     sharer_num =  int(request.POST["sharer_num"])
     ride = Ride.objects.get(pk=ride_id)
+    # increase total ride number
     ride.total_rider_number += sharer_num
+    # add personal ride into ride
+    ride.personal_ride_set.add(personal_ride)
+
     ride.save()
     return HttpResponseRedirect(reverse('uper:main_page'))
 
@@ -327,16 +345,25 @@ def driver_ride_search(request):
 def take_order(request):
     user_id = request.session["user_id"]
     user = User.objects.get(pk = user_id)
-    ride = Ride.objects.get(pk = request.POST["ride_id"])
-    user.driver.ride_set.add(ride);
-    user.personal_ride_set.create(ride = ride,
-                                  identity = "driver",
-                                  called_time = datetime.datetime.now(),
-                                  party_person_number = 0,
+    ride = Ride.objects.get(pk = int(request.POST["ride_id"]))
+    
+    personal_ride = Personal_ride(
+        user = user,
+        called_time = datetime.datetime.now(),
+        identity = "driver",
+        party_person_number = 0,
     )
+    personal_ride.save()
+    user.personal_ride_set.add(personal_ride)
     user.save()
     
+    # confirm ride, add personal ride into ride, add driver into ride
     ride.state = "confirmed"
+    ride.driver = user.driver
+    ride.personal_ride_set.add(personal_ride)
+    
+    # write the email function here!
+
     ride.save()
     return HttpResponseRedirect(reverse('uper:main_page'))
 
